@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіти та новини — МБФ Олександра Андріюка</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { brand: { blue: '#1e3a8a', dark: '#0f172a', gold: '#d97706' } } } } }</script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center">
+            <a href="index.html" class="font-extrabold text-lg text-brand-dark">МБФ Олександра Андріюка</a>
+        </div>
+    </header>
+
+    <main class="flex-grow py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 space-y-10">
+            <h1 class="text-4xl font-extrabold text-brand-dark">Звіти та новини</h1>
+            <div class="space-y-8">
+                <article class="p-6 border rounded-xl shadow-sm">
+                    <h2 class="text-xl font-bold text-brand-blue">Передано гуманітарну допомогу на Донецький напрямок</h2>
+                    <p class="text-sm text-gray-500">16 лютого 2025</p>
+                    <p class="mt-2 text-gray-700">Наші захисники отримали необхідні медикаменти та засоби першої допомоги.</p>
+                </article>
+                <article class="p-6 border rounded-xl shadow-sm">
+                    <h2 class="text-xl font-bold text-brand-blue">Підтримка реабілітаційного центру</h2>
+                    <p class="text-sm text-gray-500">17 лютого 2025</p>
+                    <p class="mt-2 text-gray-700">Фонд передав необхідні засоби для дітей з особливими потребами.</p>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-brand-dark text-white pt-16 pb-12 mt-auto text-center text-xs text-gray-500">
+        <p>&copy; МБФ Олександра Андріюка 2025. ЄДРПОУ 41481057</p>
+    </footer>
+</body>
+</html>

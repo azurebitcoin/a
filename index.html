@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МБФ Олександра Андріюка — Благодійний фонд допомоги військовим, дітям та переселенцям</title>
+    <meta name="description" content="Міжнародний благодійний фонд Олександра Андріюка — всебічна допомога військовим, дітям, переселенцям та лікарням в Україні з 2016 року. ЄДРПОУ 41481057.">
+    <meta name="keywords" content="благодійний фонд, Олександр Андріюк, допомога військовим, допомога дітям, ВПО, переселенці, благодійність Україна">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1e3a8a',
+                            dark: '#0f172a',
+                            gold: '#d97706',
+                            light: '#f8fafc',
+                            accent: '#2563eb'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Top Bar / Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <div class="bg-brand-blue text-white p-2 rounded-lg font-bold text-xl tracking-wider">
+                            <i class="fa-solid fa-hands-holding-child"></i>
+                        </div>
+                        <div>
+                            <span class="block font-extrabold text-lg sm:text-xl text-brand-dark leading-tight">МБФ Олександра Андріюка</span>
+                            <span class="block text-xs text-gray-500 font-medium">Благодійний фонд в Україні</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-brand-blue font-semibold hover:text-brand-accent transition">Головна</a>
+                    <a href="misiya.html" class="text-gray-700 font-medium hover:text-brand-blue transition">Про фонд</a>
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-700 font-medium hover:text-brand-blue transition py-2">
+                            <span>Напрями</span>
+                            <i class="fa-solid fa-angle-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute left-0 mt-0 w-64 bg-white shadow-xl rounded-lg py-2 hidden group-hover:block border border-gray-100 z-50">
+                            <a href="dopomoga-viyskovim.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Допомога військовим</a>
+                            <a href="stomatologiya-dlya-viyskovih.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Стоматологія для військових</a>
+                            <a href="dopomoga-dityam.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Допомога дітям</a>
+                            <a href="dopomoga-pereselentsyam.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Допомога переселенцям</a>
+                            <a href="dopomoga-likarnyam.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Допомога лікарням</a>
+                            <a href="dopomoga-tvarinam.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Допомога тваринам</a>
+                        </div>
+                    </div>
+                    <a href="news-stories.html" class="text-gray-700 font-medium hover:text-brand-blue transition">Звіти та новини</a>
+                    <a href="kontakti.html" class="text-gray-700 font-medium hover:text-brand-blue transition">Контакти</a>
+                </nav>
+
+                <!-- Donate Button -->
+                <div class="hidden sm:flex items-center">
+                    <a href="https://secure.wayforpay.com/donate/for_ukraine" target="_blank" class="bg-brand-gold hover:bg-amber-700 text-white font-bold px-6 py-3 rounded-full shadow-lg transition transform hover:-translate-y-0.5 flex items-center space-x-2">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Зробити внесок</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-brand-blue focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-blue bg-gray-50">Головна</a>
+            <a href="misiya.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Про фонд</a>
+            <div class="space-y-1 pl-4 border-l-2 border-brand-blue">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-wider py-1">Напрями діяльності</p>
+                <a href="dopomoga-viyskovim.html" class="block py-1.5 text-sm text-gray-600 hover:text-brand-blue">Допомога військовим</a>
+                <a href="stomatologiya-dlya-viyskovih.html" class="block py-1.5 text-sm text-gray-600 hover:text-brand-blue">Стоматологія для військових</a>
+                <a href="dopomoga-dityam.html" class="block py-1.5 text-sm text-gray-600 hover:text-brand-blue">Допомога дітям</a>
+                <a href="dopomoga-pereselentsyam.html" class="block py-1.5 text-sm text-gray-600 hover:text-brand-blue">Допомога переселенцям</a>
+                <a href="dopomoga-likarnyam.html" class="block py-1.5 text-sm text-gray-600 hover:text-brand-blue">Допомога лікарням</a>
+                <a href="dopomoga-tvarinam.html" class="block py-1.5 text-sm text-gray-600 hover:text-brand-blue">Допомога тваринам</a>
+            </div>
+            <a href="news-stories.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Звіти та новини</a>
+            <a href="kontakti.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Контакти</a>
+            <div class="pt-2">
+                <a href="https://secure.wayforpay.com/donate/for_ukraine" target="_blank" class="w-full text-center block bg-brand-gold text-white font-bold px-4 py-3 rounded-xl shadow">
+                    Зробити внесок
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-brand-dark via-blue-950 to-brand-blue text-white py-20 lg:py-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="inline-block bg-brand-gold/20 text-amber-300 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase border border-amber-400/30">
+                        Разом до перемоги
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        МБФ Олександра Андріюка
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-300 max-w-2xl font-normal leading-relaxed">
+                        Благодійний фонд створений за ініціативи Олександра Андріюка, для всебічної допомоги: військовим, дітям та переселенцям. Працюємо з 2016 року задля нашого майбутнього.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="misiya.html" class="bg-white text-brand-dark hover:bg-gray-100 font-bold px-8 py-4 rounded-xl shadow-lg transition">
+                            Про фонд та місія
+                        </a>
+                        <a href="https://secure.wayforpay.com/donate/for_ukraine" target="_blank" class="bg-brand-gold hover:bg-amber-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition flex items-center space-x-2">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                            <span>Долучитись до збору</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md bg-white/10 backdrop-blur-md p-4 rounded-3xl border border-white/20 shadow-2xl">
+                        <div class="rounded-2xl overflow-hidden shadow-lg bg-blue-900/50 aspect-[4/5] flex items-center justify-center relative">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+                            <div class="absolute bottom-6 left-6 right-6 z-20 text-white space-y-2">
+                                <span class="bg-brand-gold text-xs font-bold px-3 py-1 rounded-full">Пріоритет</span>
+                                <h3 class="text-xl font-bold">Підтримка ЗСУ та гуманітарні місії</h3>
+                                <p class="text-sm text-gray-200">Щоденна допомога українським захисникам та родинам у скруті.</p>
+                            </div>
+                            <div class="text-center p-8 text-blue-200">
+                                <i class="fa-solid fa-shield-heart text-7xl mb-4 text-brand-gold"></i>
+                                <p class="text-lg font-semibold">Міжнародний благодійний фонд</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Ribbon -->
+    <section class="bg-white border-b border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-brand-light p-8 lg:p-12 rounded-3xl border border-blue-100 shadow-sm">
+                <div class="space-y-4">
+                    <span class="text-brand-blue font-bold tracking-wider uppercase text-sm">Результати нашої роботи</span>
+                    <h2 class="text-3xl font-extrabold text-brand-dark">Допомагаємо тим, хто цього найбільше потребує</h2>
+                    <p class="text-gray-600">Завдяки нашим донорам та партнерам ми вже досягли значних результатів у цільових програмах.</p>
+                    <div class="pt-2">
+                        <a href="news-stories.html" class="inline-flex items-center text-brand-blue font-bold hover:underline">
+                            <span>Переглянути звіти та новини</span>
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
+                        <div class="text-3xl lg:text-4xl font-extrabold text-brand-gold mb-1">8,3 млн грн</div>
+                        <div class="text-sm text-gray-600 font-medium">Зібрано коштів для цільових програм</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
+                        <div class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-1">124 тонни</div>
+                        <div class="text-sm text-gray-600 font-medium">Передано гуманітарної допомоги</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Priority Programs Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-blue font-bold uppercase tracking-widest text-sm bg-blue-100 px-4 py-1.5 rounded-full inline-block">Напрями діяльності фонду</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark">Пріоритетні програми</h2>
+                <p class="text-gray-600 text-lg">Ми зосереджуємо свої зусилля на критично важливих напрямах підтримки суспільства під час війни.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-white rounded-3xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition flex flex-col justify-between">
+                    <div class="p-8 space-y-4">
+                        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-blue text-2xl font-bold">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-dark">Допомога військовим</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Кожного дня українські воїни ризикують своїм життям, обороняючи нашу свободу. Забезпечуємо спорядженням, медикаментами та речами першої необхідності.
+                        </p>
+                    </div>
+                    <div class="px-8 pb-8 pt-0">
+                        <a href="dopomoga-viyskovim.html" class="inline-flex items-center text-brand-blue font-bold hover:text-brand-dark transition">
+                            <span>Детальніше</span>
+                            <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="bg-white rounded-3xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition flex flex-col justify-between">
+                    <div class="p-8 space-y-4">
+                        <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center text-brand-gold text-2xl font-bold">
+                            <i class="fa-solid fa-children"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-dark">Допомога дітям</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Підтримка найуразливіших – дітей, які через військові конфлікти чи сімейні труднощі опинилися у складних життєвих обставинах. Створюємо умови для безпечного розвитку.
+                        </p>
+                    </div>
+                    <div class="px-8 pb-8 pt-0">
+                        <a href="dopomoga-dityam.html" class="inline-flex items-center text-brand-blue font-bold hover:text-brand-dark transition">
+                            <span>Детальніше</span>
+                            <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="bg-white rounded-3xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition flex flex-col justify-between">
+                    <div class="p-8 space-y-4">
+                        <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 text-2xl font-bold">
+                            <i class="fa-solid fa-house-chimney-user"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-dark">Інші напрями допомоги</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Допомога переселенцям (ВПО), лікарням, медичним закладам, а також порятунок і догляд за безпритульними тваринами у зонах конфлікту.
+                        </p>
+                    </div>
+                    <div class="px-8 pb-8 pt-0">
+                        <a href="misiya.html" class="inline-flex items-center text-brand-blue font-bold hover:text-brand-dark transition">
+                            <span>Детальніше</span>
+                            <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Help / Get Help Accordion Section -->
+    <section class="py-20 bg-white border-t border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 space-y-4">
+                <span class="text-brand-blue font-bold uppercase tracking-widest text-sm bg-blue-100 px-4 py-1.5 rounded-full inline-block">Взаємодія з фондом</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark">Як долучитись чи отримати допомогу?</h2>
+                <p class="text-gray-600">Ознайомтесь з порядком звернення та надання допомоги нашим фондом.</p>
+            </div>
+
+            <div class="space-y-4" id="faq-accordion">
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 text-left font-bold text-lg text-brand-dark transition">
+                        <span>Як отримати допомогу?</span>
+                        <i class="fa-solid fa-plus text-brand-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-gray-600 space-y-2 bg-white">
+                        <p>Для отримання допомоги від нашого Фонду існує певний порядок.</p>
+                        <p>Особа / організація / військова частина / госпіталь звертається через месенджер Facebook або електронну пошту та заповнює власноруч заяву за встановленим зразком.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 text-left font-bold text-lg text-brand-dark transition">
+                        <span>Як долучитися до нашої команди для надання допомоги?</span>
+                        <i class="fa-solid fa-plus text-brand-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-gray-600 space-y-2 bg-white">
+                        <p>Ви можете відправити будь-яку допомогу (їжу, гігієну, одяг, побутові речі, іграшки тощо) через відділення Нової пошти на адресу нашого представництва.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 text-left font-bold text-lg text-brand-dark transition">
+                        <span>Як допомогти великим об'ємом?</span>
+                        <i class="fa-solid fa-plus text-brand-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-gray-600 space-y-2 bg-white">
+                        <p>Якщо ви хочете допомогти значним об'ємом гуманітарної допомоги, наші волонтери можуть самостійно здійснити виїзд та забрати вантаж.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 text-left font-bold text-lg text-brand-dark transition">
+                        <span>Як допомогти фінансово?</span>
+                        <i class="fa-solid fa-plus text-brand-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-gray-600 space-y-2 bg-white">
+                        <p>Ви можете зробити безпечний благодійний внесок через платіжну систему WayForPay на нашому сайті для закупівлі необхідного обладнання та забезпечення запитів.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Foundation Brief -->
+    <section class="py-20 bg-brand-light">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-blue-100">
+            <div class="space-y-6">
+                <span class="text-brand-blue font-bold uppercase tracking-widest text-sm">Про організацію</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark">Ми — неприбуткова благодійна організація</h2>
+                <div class="prose prose-blue max-w-none text-gray-600 space-y-4">
+                    <p>
+                        <strong>Міжнародний благодійний фонд Олександра Андріюка</strong> — неприбуткова недержавна благодійна організація. Фонд допомагає нужденним людям і покинутим дітям з 2016 року та офіційно зареєстрований в Україні у 2017 році (ідентифікаційний код юридичної особи <strong>41481057</strong>).
+                    </p>
+                    <p>
+                        Усі зібрані кошти та отримана матеріальна допомога спрямовуються виключно на статутні благодійні цілі. Засновник і керівник Фонду Олександр Андріюк працює на волонтерських засадах.
+                    </p>
+                </div>
+                <div class="pt-4 flex flex-wrap gap-4">
+                    <a href="misiya.html" class="bg-brand-blue hover:bg-blue-900 text-white font-bold px-6 py-3 rounded-xl transition">
+                        Детальніше про місію
+                    </a>
+                    <a href="news-stories.html" class="bg-gray-100 hover:bg-gray-200 text-brand-dark font-bold px-6 py-3 rounded-xl transition">
+                        Звіти та новини
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white pt-16 pb-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-gray-800">
+                <!-- Col 1 -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-brand-gold text-white p-2 rounded-lg font-bold text-xl">
+                            <i class="fa-solid fa-hands-holding-child"></i>
+                        </div>
+                        <span class="font-bold text-xl text-white">МБФ Олександра Андріюка</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Офіційний благодійний фонд допомоги військовим, дітям та переселенцям в Україні. Реєстраційний код ЄДРПОУ: 41481057.
+                    </p>
+                    <div>
+                        <a href="https://secure.wayforpay.com/donate/for_ukraine" target="_blank" class="bg-brand-gold hover:bg-amber-600 text-white font-bold px-6 py-3 rounded-xl inline-block transition shadow-md">
+                            Зробити внесок
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-bold text-white tracking-wide">Актуальні програми</h3>
+                    <ul class="space-y-2.5 text-sm text-gray-400">
+                        <li><a href="dopomoga-viyskovim.html" class="hover:text-white transition">Допомога військовим</a></li>
+                        <li><a href="stomatologiya-dlya-viyskovih.html" class="hover:text-white transition">Стоматологія для військових</a></li>
+                        <li><a href="dopomoga-dityam.html" class="hover:text-white transition">Допомога дітям</a></li>
+                        <li><a href="dopomoga-likarnyam.html" class="hover:text-white transition">Допомога лікарням</a></li>
+                        <li><a href="dopomoga-pereselentsyam.html" class="hover:text-white transition">Допомога переселенцям</a></li>
+                        <li><a href="dopomoga-tvarinam.html" class="hover:text-white transition">Допомога тваринам</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-bold text-white tracking-wide">Контакти та соцмережі</h3>
+                    <ul class="space-y-2.5 text-sm text-gray-400">
+                        <li><a href="kontakti.html" class="hover:text-white transition">Контакти фонду</a></li>
+                        <li><a href="https://www.instagram.com/peremoga_fond__maybutnye/" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram mr-2"></i> Instagram</a></li>
+                        <li><a href="https://www.facebook.com/blagofond.andriyuk/" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook mr-2"></i> Facebook</a></li>
+                        <li class="pt-2"><a href="dogovir-publichnoi-oferti.html" class="hover:text-white underline text-xs">Договір публічної оферти</a></li>
+                        <li><a href="politika-konfidentsiynosti.html" class="hover:text-white underline text-xs">Політика конфіденційності</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; МБФ Олександра Андріюка 2025. Усі права захищені.</p>
+                <p class="mt-4 sm:mt-0">Юридична адреса: Україна, 33017, м. Рівне, просп. Миру, 17 | ЄДРПОУ 41481057</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JS -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FAQ Accordion
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-45');
+            });
+        });
+    </script>
+</body>
+</html>
