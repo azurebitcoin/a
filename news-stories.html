@@ -5,30 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Звіти та новини — МБФ Олександра Андріюка</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { brand: { blue: '#1e3a8a', dark: '#0f172a', gold: '#d97706' } } } } }</script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { blue: '#1e3a8a', dark: '#0f172a', gold: '#d97706', light: '#f8fafc' } } } } }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
     <header class="sticky top-0 z-50 bg-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center">
-            <a href="index.html" class="font-extrabold text-lg text-brand-dark">МБФ Олександра Андріюка</a>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <span class="font-extrabold text-lg text-brand-dark">МБФ Олександра Андріюка</span>
+                </a>
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 font-medium hover:text-brand-blue transition">Головна</a>
+                    <a href="misiya.html" class="text-gray-700 font-medium hover:text-brand-blue transition">Про фонд</a>
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-700 font-medium hover:text-brand-blue transition py-2">
+                            <span>Напрями</span>
+                            <i class="fa-solid fa-angle-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute left-0 mt-0 w-64 bg-white shadow-xl rounded-lg py-2 hidden group-hover:block border border-gray-100 z-50">
+                            <a href="dopomoga-viyskovim.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Допомога військовим</a>
+                            <a href="stomatologiya-dlya-viyskovih.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Стоматологія для військових</a>
+                            <a href="dopomoga-dityam.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Допомога дітям</a>
+                            <a href="dopomoga-pereselentsyam.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Допомога переселенцям</a>
+                            <a href="dopomoga-likarnyam.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Допомога лікарням</a>
+                            <a href="dopomoga-tvarinam.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Допомога тваринам</a>
+                        </div>
+                    </div>
+                    <a href="news-stories.html" class="text-brand-blue font-semibold hover:text-brand-accent transition">Звіти та новини</a>
+                    <a href="kontakti.html" class="text-gray-700 font-medium hover:text-brand-blue transition">Контакти</a>
+                </nav>
+            </div>
         </div>
     </header>
 
     <main class="flex-grow py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 space-y-10">
+        <div class="max-w-4xl mx-auto px-4 space-y-16">
             <h1 class="text-4xl font-extrabold text-brand-dark">Звіти та новини</h1>
-            <div class="space-y-8">
-                <article class="p-6 border rounded-xl shadow-sm">
-                    <h2 class="text-xl font-bold text-brand-blue">Передано гуманітарну допомогу на Донецький напрямок</h2>
-                    <p class="text-sm text-gray-500">16 лютого 2025</p>
-                    <p class="mt-2 text-gray-700">Наші захисники отримали необхідні медикаменти та засоби першої допомоги.</p>
-                </article>
-                <article class="p-6 border rounded-xl shadow-sm">
-                    <h2 class="text-xl font-bold text-brand-blue">Підтримка реабілітаційного центру</h2>
-                    <p class="text-sm text-gray-500">17 лютого 2025</p>
-                    <p class="mt-2 text-gray-700">Фонд передав необхідні засоби для дітей з особливими потребами.</p>
-                </article>
-            </div>
+            
+            <!-- Instagram Feed Section -->
+            <section>
+                <h2 class="text-2xl font-bold text-brand-dark mb-6">Наш Instagram</h2>
+                <!-- ВСТАВЬТЕ СЮДИ КОД ВІДЖЕТА INSTAGRAM -->
+                <div class="p-8 bg-gray-100 rounded-xl text-center text-gray-500">
+                    Стрічка Instagram з'явиться тут після налаштування віджета (наприклад, Elfsight).
+                </div>
+            </section>
+
+            <!-- Facebook Feed Section -->
+            <section>
+                <h2 class="text-2xl font-bold text-brand-dark mb-6">Facebook новини</h2>
+                <!-- ВСТАВЬТЕ СЮДИ КОД ВІДЖЕТА FACEBOOK -->
+                <div class="p-8 bg-gray-100 rounded-xl text-center text-gray-500">
+                    Стрічка Facebook з'явиться тут після налаштування віджета (наприклад, Elfsight).
+                </div>
+            </section>
         </div>
     </main>
 
