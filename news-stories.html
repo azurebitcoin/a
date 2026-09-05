@@ -48,11 +48,75 @@
             <h1 class="text-4xl font-extrabold text-brand-dark">Звіти та новини</h1>
             
             <!-- Instagram Feed Section -->
-            <section>
-                <h2 class="text-2xl font-bold text-brand-dark mb-6">Наш Instagram</h2>
-                <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
-                <script src="https://elfsightcdn.com/platform.js" async></script>
-                <div class="elfsight-app-91b4045c-d7a1-40b3-95da-f942a27124d2" data-elfsight-app-lazy></div>
+            <section class="space-y-8">
+                <div class="text-center sm:text-left">
+                    <h2 class="text-3xl font-extrabold text-brand-dark">Наш Instagram та Звіти</h2>
+                    <p class="text-gray-600 mt-2">Слідкуйте за нашими щоденними звітами, новинами та історіями безпосередньо в соціальних мережах.</p>
+                </div>
+
+                <!-- Native Instagram Post Embed Grid (Офіційне вбудовування) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start justify-center">
+                    
+                    <!-- Embed 1 -->
+                    <div class="bg-white p-4 rounded-3xl border border-gray-100 shadow-md flex justify-center">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DFWn_YpNHI5/" data-instgrm-version="14" class="w-full" style="background:#FFF; border:0; border-radius:12px; box-shadow:none; margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%;">
+                            <div style="padding:16px;">
+                                <a href="https://www.instagram.com/p/DFWn_YpNHI5/" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+                                    <div style="display: flex; flex-direction: row; align-items: center;">
+                                        <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
+                                        <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                            <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                                            <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
+                                        </div>
+                                    </div>
+                                    <div style="padding: 19% 0;"></div>
+                                    <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
+                                        <i class="fa-brands fa-instagram text-4xl text-brand-gold"></i>
+                                    </div>
+                                    <div style="padding-top: 8px;">
+                                        <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Переглянути звіт в Instagram</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </blockquote>
+                    </div>
+
+                    <!-- Embed 2 -->
+                    <div class="bg-white p-4 rounded-3xl border border-gray-100 shadow-md flex justify-center">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DFPqUqZtpI7/" data-instgrm-version="14" class="w-full" style="background:#FFF; border:0; border-radius:12px; box-shadow:none; margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%;">
+                            <div style="padding:16px;">
+                                <a href="https://www.instagram.com/p/DFPqUqZtpI7/" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+                                    <div style="display: flex; flex-direction: row; align-items: center;">
+                                        <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
+                                        <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                            <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                                            <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
+                                        </div>
+                                    </div>
+                                    <div style="padding: 19% 0;"></div>
+                                    <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
+                                        <i class="fa-brands fa-instagram text-4xl text-brand-gold"></i>
+                                    </div>
+                                    <div style="padding-top: 8px;">
+                                        <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Переглянути допис в Instagram</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </blockquote>
+                    </div>
+
+                </div>
+
+                <!-- Instagram SDK Script -->
+                <script async src="https://www.instagram.com/embed.js"></script>
+
+                <!-- Call to Action to Profile -->
+                <div class="text-center pt-4">
+                    <a href="https://www.instagram.com/peremoga_fond__maybutnye/" target="_blank" class="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 hover:from-purple-700 hover:to-amber-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                        <span>Перейти до нашого Instagram-профілю</span>
+                    </a>
+                </div>
             </section>
 
         </div>
