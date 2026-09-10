@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Керування сайтом — МБФ Олександра Андріюка</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Розділи панелі">
+      <a class="brand" href="../index.html" aria-label="Перейти на сайт фонду">
+        <span class="brand-mark">А</span>
+        <span><strong>Фонд Андріюка</strong><small>Керування сайтом</small></span>
+      </a>
+
+      <nav id="admin-nav" class="nav" hidden>
+        <button class="nav-item is-active" data-view="overview"><span>Огляд</span></button>
+        <button class="nav-item" data-view="homepage"><span>Головна сторінка</span></button>
+        <button class="nav-item" data-view="programs"><span>Програми допомоги</span></button>
+        <button class="nav-item" data-view="posts"><span>Новини та звіти</span></button>
+        <button class="nav-item" data-view="organization"><span>Про фонд</span></button>
+        <button class="nav-item" data-view="contacts"><span>Контакти й посилання</span></button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="../index.html" target="_blank" rel="noopener">Відкрити сайт</a>
+        <button id="sign-out" class="text-button" hidden>Вийти</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button id="menu-toggle" class="menu-toggle" aria-label="Відкрити меню">Меню</button>
+        <div>
+          <p class="eyebrow">БО «МБФ Олександра Андріюка»</p>
+          <h1 id="page-title">Панель адміністратора</h1>
+        </div>
+        <div id="session-badge" class="session-badge" hidden>
+          <span class="status-dot"></span>
+          <span>info@andriukfoundation.com</span>
+        </div>
+      </header>
+
+      <section id="setup-view" class="center-card" hidden>
+        <span class="lock-mark">!</span>
+        <h2>Потрібне завершення підключення</h2>
+        <p>Захищене сховище ще не активоване. Після підключення панель буде доступна лише для адреси фонду.</p>
+      </section>
+
+      <section id="login-view" class="center-card" hidden>
+        <span class="lock-mark">✓</span>
+        <h2>Вхід до панелі</h2>
+        <p>Ми надішлемо одноразове посилання на офіційну адресу фонду. Пароль не зберігається.</p>
+        <form id="login-form" class="stack-form">
+          <label>Електронна пошта
+            <input id="login-email" type="email" value="info@andriukfoundation.com" readonly autocomplete="email">
+          </label>
+          <button class="button button-primary" type="submit">Надіслати посилання для входу</button>
+        </form>
+        <p id="login-message" class="form-message" role="status"></p>
+      </section>
+
+      <section id="app-view" hidden>
+        <div id="notice" class="notice" role="status" hidden></div>
+
+        <section class="view is-visible" data-view-panel="overview">
+          <div class="summary-grid">
+            <article class="summary-card"><span>Сайт</span><strong>Опублікований</strong><small>andriukfoundation.com</small></article>
+            <article class="summary-card"><span>Доступ</span><strong>1 адміністратор</strong><small>Лише офіційна пошта</small></article>
+            <article class="summary-card"><span>Зміни</span><strong id="last-update">Ще не збережено</strong><small>Останнє оновлення</small></article>
+          </div>
+          <article class="panel welcome-panel">
+            <div>
+              <p class="eyebrow">Швидкий початок</p>
+              <h2>Що потрібно оновити сьогодні?</h2>
+              <p>Відкрийте потрібний розділ, збережіть чернетку, перевірте текст і натисніть «Опублікувати».</p>
+            </div>
+            <div class="quick-actions">
+              <button class="button button-primary" data-open-view="posts">Додати новину або звіт</button>
+              <button class="button button-secondary" data-open-view="homepage">Оновити головну</button>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" data-view-panel="homepage">
+          <form class="panel editor-form" data-section-form="homepage">
+            <div class="panel-heading"><div><p class="eyebrow">Головна сторінка</p><h2>Перший екран і результати</h2></div><span class="draft-label">Чернетка</span></div>
+            <div class="form-grid">
+              <label>Коротка позначка<input name="heroEyebrow" type="text" maxlength="80"></label>
+              <label>Головний заголовок<input name="heroTitle" type="text" maxlength="120"></label>
+              <label class="wide">Вступний текст<textarea name="heroText" rows="4" maxlength="600"></textarea></label>
+              <label>Зібрано коштів<input name="statFunds" type="text" maxlength="40"></label>
+              <label>Підпис показника<input name="statFundsLabel" type="text" maxlength="120"></label>
+              <label>Передано допомоги<input name="statAid" type="text" maxlength="40"></label>
+              <label>Підпис показника<input name="statAidLabel" type="text" maxlength="120"></label>
+            </div>
+            <div class="form-actions"><button class="button button-secondary" type="button" data-save-draft>Зберегти чернетку</button><button class="button button-primary" type="button" data-publish>Опублікувати</button></div>
+          </form>
+        </section>
+
+        <section class="view" data-view-panel="programs">
+          <div class="panel">
+            <div class="panel-heading"><div><p class="eyebrow">Напрями діяльності</p><h2>Програми допомоги</h2></div><button id="add-program" class="button button-secondary">Додати програму</button></div>
+            <div id="program-list" class="item-list"></div>
+            <div class="form-actions"><button class="button button-secondary" type="button" data-programs-draft>Зберегти чернетку</button><button class="button button-primary" type="button" data-programs-publish>Опублікувати</button></div>
+          </div>
+        </section>
+
+        <section class="view" data-view-panel="posts">
+          <div class="panel">
+            <div class="panel-heading"><div><p class="eyebrow">Публікації</p><h2>Новини та звіти</h2></div><button id="new-post" class="button button-primary">Нова публікація</button></div>
+            <div id="post-list" class="item-list"></div>
+          </div>
+          <form id="post-form" class="panel editor-form" hidden>
+            <input name="id" type="hidden">
+            <div class="panel-heading"><h2 id="post-form-title">Нова публікація</h2><button class="text-button" type="button" id="close-post">Закрити</button></div>
+            <div class="form-grid">
+              <label class="wide">Заголовок<input name="title" type="text" required maxlength="180"></label>
+              <label>Дата<input name="published_at" type="date" required></label>
+              <label>Статус<select name="status"><option value="draft">Чернетка</option><option value="published">Опублікувати</option></select></label>
+              <label class="wide">Короткий опис<textarea name="excerpt" rows="3" maxlength="500"></textarea></label>
+              <label class="wide">Основний текст<textarea name="body" rows="8"></textarea></label>
+              <label class="wide">Посилання на документ або допис<input name="link" type="url" placeholder="https://"></label>
+            </div>
+            <div class="form-actions"><button class="button button-primary" type="submit">Зберегти публікацію</button></div>
+          </form>
+        </section>
+
+        <section class="view" data-view-panel="organization">
+          <form class="panel editor-form" data-section-form="organization">
+            <div class="panel-heading"><div><p class="eyebrow">Організація</p><h2>Місія та опис фонду</h2></div><span class="draft-label">Чернетка</span></div>
+            <div class="form-grid"><label class="wide">Короткий опис<textarea name="about" rows="5"></textarea></label><label class="wide">Місія фонду<textarea name="mission" rows="7"></textarea></label></div>
+            <div class="form-actions"><button class="button button-secondary" type="button" data-save-draft>Зберегти чернетку</button><button class="button button-primary" type="button" data-publish>Опублікувати</button></div>
+          </form>
+        </section>
+
+        <section class="view" data-view-panel="contacts">
+          <form class="panel editor-form" data-section-form="contacts">
+            <div class="panel-heading"><div><p class="eyebrow">Зв’язок</p><h2>Контакти й посилання</h2></div><span class="draft-label">Чернетка</span></div>
+            <div class="form-grid">
+              <label class="wide">Повна юридична назва<input name="legalName" type="text" maxlength="240"></label>
+              <label>ЄДРПОУ<input name="edrpou" type="text" inputmode="numeric" maxlength="12"></label><label>Рік реєстрації<input name="registrationYear" type="text" inputmode="numeric" maxlength="4"></label>
+              <label class="wide">Керівник<input name="director" type="text" maxlength="160"></label>
+              <label>Пошта<input name="email" type="email"></label><label>Телефон<input name="phone" type="tel"></label>
+              <label class="wide">Адреса<input name="address" type="text"></label>
+              <label>Facebook<input name="facebook" type="url"></label><label>Instagram<input name="instagram" type="url"></label>
+              <label class="wide">Посилання для внесків<input name="donationUrl" type="url"></label>
+            </div>
+            <div class="form-actions"><button class="button button-secondary" type="button" data-save-draft>Зберегти чернетку</button><button class="button button-primary" type="button" data-publish>Опублікувати</button></div>
+          </form>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0"></script>
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

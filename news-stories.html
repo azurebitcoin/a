@@ -67,6 +67,14 @@
     <main class="flex-grow py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4 space-y-16">
             <h1 class="text-4xl font-extrabold text-brand-dark">Звіти та новини</h1>
+
+            <section data-cms-posts-section class="space-y-6" hidden>
+                <div>
+                    <h2 class="text-3xl font-extrabold text-brand-dark">Оновлення фонду</h2>
+                    <p class="text-gray-600 mt-2">Новини, звіти та важливі оголошення.</p>
+                </div>
+                <div data-cms-posts class="space-y-6"></div>
+            </section>
             
             <!-- Instagram Feed Section (Elfsight Widget) -->
             <section class="space-y-6">
@@ -140,5 +148,7 @@
   }
 })();
 </script>
+<script src="cms-config.js"></script>
+<script src="js/cms-content.js"></script>
 </body>
 </html>

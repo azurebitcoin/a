@@ -154,13 +154,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6">
-                    <span class="inline-block bg-brand-gold/20 text-amber-300 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase border border-amber-400/30">
+                    <span data-cms-text="homepage.heroEyebrow" class="inline-block bg-brand-gold/20 text-amber-300 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase border border-amber-400/30">
                         Разом до перемоги
                     </span>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                    <h1 data-cms-text="homepage.heroTitle" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
                         МБФ Олександра Андріюка
                     </h1>
-                    <p class="text-lg sm:text-xl text-gray-300 max-w-2xl font-normal leading-relaxed">
+                    <p data-cms-text="homepage.heroText" class="text-lg sm:text-xl text-gray-300 max-w-2xl font-normal leading-relaxed">
                         Благодійний фонд створений за ініціативи Олександра Андріюка, для всебічної допомоги: військовим, дітям та переселенцям. Працюємо з 2016 року задля нашого майбутнього.
                     </p>
                     <div class="flex flex-wrap gap-4 pt-4">
@@ -210,12 +210,12 @@
                 </div>
                 <div class="grid grid-cols-2 gap-6">
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
-                        <div class="text-3xl lg:text-4xl font-extrabold text-brand-gold mb-1">8,3 млн грн</div>
-                        <div class="text-sm text-gray-600 font-medium">Зібрано коштів для цільових програм</div>
+                        <div data-cms-text="homepage.statFunds" class="text-3xl lg:text-4xl font-extrabold text-brand-gold mb-1">8,3 млн грн</div>
+                        <div data-cms-text="homepage.statFundsLabel" class="text-sm text-gray-600 font-medium">Зібрано коштів для цільових програм</div>
                     </div>
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
-                        <div class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-1">124 тонни</div>
-                        <div class="text-sm text-gray-600 font-medium">Передано гуманітарної допомоги</div>
+                        <div data-cms-text="homepage.statAid" class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-1">124 тонни</div>
+                        <div data-cms-text="homepage.statAidLabel" class="text-sm text-gray-600 font-medium">Передано гуманітарної допомоги</div>
                     </div>
                 </div>
             </div>
@@ -231,7 +231,7 @@
                 <p class="text-gray-600 text-lg">Ми зосереджуємо свої зусилля на критично важливих напрямах підтримки суспільства під час війни.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div data-cms-programs class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Program 1 -->
                 <div class="bg-white rounded-3xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition flex flex-col justify-between">
                     <div class="p-8 space-y-4">
@@ -507,5 +507,7 @@
   }
 })();
 </script>
+<script src="cms-config.js"></script>
+<script src="js/cms-content.js"></script>
 </body>
 </html>
