@@ -75,3 +75,6 @@ body{overflow-wrap:break-word}
 .report-copy{font-size:1.02rem;line-height:1.75;color:#334155}.report-copy p+p{margin-top:1rem}
 .report-origin{margin-top:1.25rem;padding-top:1rem;border-top:1px solid #e2e8f0;color:#64748b;font-size:.85rem}
 @media(max-width:700px){.report-control-grid{grid-template-columns:1fr}.report-stat-row{grid-template-columns:1fr}.report-meta time{width:100%;margin-left:0}.report-pages a{flex:1 1 6rem;text-align:center}}
+
+/* Keep filtered archive cards hidden despite their grid display. */
+.report-card[hidden],#report-empty[hidden]{display:none!important}
