@@ -37,3 +37,44 @@ body{overflow-wrap:break-word}
 .site-form{display:grid;gap:.65rem;margin-top:1.5rem}.site-form[hidden],#letter-result[hidden]{display:none}
 .site-form label{font-weight:650;margin-top:.65rem}.site-form input,.site-form select,.site-form textarea,.site-letter-preview{font:inherit;color:#0f172a;background:#fff;border:1px solid #64748b;border-radius:.5rem;padding:.75rem;width:100%;min-width:0;min-height:48px;box-sizing:border-box}.site-form textarea,.site-letter-preview{resize:vertical}.site-form button{justify-self:start}.site-letter-preview{margin-top:.65rem}.site-form input:focus,.site-form textarea:focus,.site-form select:focus{outline:3px solid #93c5fd;outline-offset:2px}
 @media(max-width:420px){.site-header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.75rem}.site-header .site-brand{max-width:none}.site-mobile{grid-column:1/-1}.site-header-inner>.site-button{max-width:8rem}.site-hero-support{padding:1.25rem}.site-guide{overflow-wrap:anywhere}}
+/* Unified activity archive migrated from andriukfoundation.org. */
+.report-archive{max-width:1180px}
+.report-archive-intro{background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;border-radius:1.25rem;padding:clamp(1.5rem,5vw,3rem)}
+.report-archive-intro h1{color:#fff;font-size:clamp(2rem,6vw,3.5rem);font-weight:850;line-height:1.12;margin:.35rem 0 1rem}
+.report-archive-intro .site-lead{color:#dbeafe;max-width:52rem}
+.report-kicker{text-transform:uppercase;letter-spacing:.12em;color:#fbbf24;font-weight:800;font-size:.8rem}
+.report-stat-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin-top:2rem}
+.report-stat-row div{background:#ffffff12;border:1px solid #ffffff30;border-radius:.8rem;padding:1rem;display:grid}
+.report-stat-row strong{font-size:clamp(1.5rem,4vw,2.25rem);line-height:1;color:#fff}
+.report-stat-row span{font-size:.85rem;color:#dbeafe;margin-top:.35rem}
+.report-disclosure{border-left:5px solid #d97706}
+.report-controls{margin:2rem 0;padding:1.5rem;background:#eff6ff;border:1px solid #bfdbfe;border-radius:1rem}
+.report-controls h2{font-size:1.35rem;font-weight:800;margin:0 0 1rem}
+.report-control-grid{display:grid;grid-template-columns:2fr 1fr;gap:1rem}
+.report-controls label{font-weight:700;color:#0f172a;display:grid;gap:.45rem}
+.report-controls input,.report-controls select{width:100%;min-height:48px;border:1px solid #64748b;border-radius:.6rem;background:#fff;padding:.7rem .85rem;font:inherit;color:#0f172a}
+.report-controls input:focus,.report-controls select:focus{outline:3px solid #93c5fd;outline-offset:2px}
+.report-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:1rem}
+.report-card{display:flex;flex-direction:column;padding:1.25rem;border:1px solid #dbe3ec;border-radius:1rem;background:#fff;box-shadow:0 4px 16px #0f172a0a}
+.report-card h2{font-size:1.15rem;margin:.7rem 0;line-height:1.35}
+.report-card h2 a{text-decoration:none;color:#0f172a}.report-card h2 a:hover{text-decoration:underline;color:#1e3a8a}
+.report-card>p:not(.report-meta){color:#475569;font-size:.94rem;flex-grow:1}
+.report-meta{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;font-size:.78rem;font-weight:700;color:#475569}
+.report-meta span{background:#dbeafe;color:#1e3a8a;border-radius:999px;padding:.3rem .55rem}
+.report-meta time{margin-left:auto}
+.report-read,.report-back{display:inline-block;margin-top:1rem;color:#1e3a8a;font-weight:750;text-decoration:underline;text-underline-offset:.18rem}
+.report-pages{display:flex;flex-wrap:wrap;gap:.5rem;margin:2rem 0;align-items:center}
+.report-pages a{padding:.55rem .75rem;border:1px solid #bfdbfe;border-radius:.5rem;background:#fff;color:#1e3a8a;font-weight:700;text-decoration:none}
+.report-pages a:hover,.report-pages a.is-active{background:#1e3a8a;color:#fff;border-color:#1e3a8a}
+.report-entry-list{display:grid;gap:2rem}
+.report-entry{scroll-margin-top:1rem;border:1px solid #dbe3ec;border-radius:1.25rem;background:#fff;padding:clamp(1.25rem,4vw,2.25rem);box-shadow:0 6px 22px #0f172a0d}
+.report-entry.report-target{box-shadow:0 0 0 4px #fbbf24,0 8px 26px #0f172a1a}
+.report-entry h2{font-size:clamp(1.45rem,4vw,2.15rem);line-height:1.2;margin:.8rem 0 1rem}
+.report-entry figure{margin:1.25rem 0}.report-entry figure img{display:block;width:100%;max-height:640px;object-fit:contain;background:#f1f5f9;border-radius:.8rem}
+.report-entry figcaption{font-size:.8rem;color:#64748b;margin-top:.4rem}
+.report-copy{font-size:1.02rem;line-height:1.75;color:#334155}.report-copy p+p{margin-top:1rem}
+.report-origin{margin-top:1.25rem;padding-top:1rem;border-top:1px solid #e2e8f0;color:#64748b;font-size:.85rem}
+@media(max-width:700px){.report-control-grid{grid-template-columns:1fr}.report-stat-row{grid-template-columns:1fr}.report-meta time{width:100%;margin-left:0}.report-pages a{flex:1 1 6rem;text-align:center}}
+
+/* Keep filtered archive cards hidden despite their grid display. */
+.report-card[hidden],#report-empty[hidden]{display:none!important}
