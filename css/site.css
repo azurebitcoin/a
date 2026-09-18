@@ -78,3 +78,27 @@ body{overflow-wrap:break-word}
 
 /* Keep filtered archive cards hidden despite their grid display. */
 .report-card[hidden],#report-empty[hidden]{display:none!important}
+
+/* Unified menu: six top-level sections plus program/about dropdowns. */
+.site-nav-desktop{gap:.85rem;font-size:.875rem}
+.site-dropdown>div{left:0;right:auto;z-index:20}
+.site-dropdown-end>div{left:auto;right:0}
+.site-header summary[aria-current=page]{color:#1e3a8a;text-decoration:underline;text-underline-offset:.35rem}
+@media(min-width:1280px){.site-nav-desktop{display:flex}.site-mobile{display:none}.site-header-inner{flex-wrap:nowrap}}
+@media(min-width:1180px) and (max-width:1279px){.site-nav-desktop{display:none}.site-mobile{display:block}}
+
+.site-stat-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin:1.5rem 0}
+.site-stat-row div{background:#eff6ff;border:1px solid #bfdbfe;border-radius:.8rem;padding:1rem;display:grid}
+.site-stat-row strong{font-size:clamp(1.35rem,3vw,2rem);line-height:1;color:#0f172a}
+.site-stat-row span{font-size:.85rem;color:#334155;margin-top:.35rem}
+.site-quote{border-left:4px solid #d97706;padding:1.25rem 1.5rem;background:#fffbeb;border-radius:0 1rem 1rem 0;margin:1.25rem 0}
+.site-quote p+p{margin-top:.85rem}
+.site-team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:1.25rem}
+.site-team-card{background:#fff;border:1px solid #dbe3ec;border-radius:1rem;overflow:hidden;padding:0 0 1rem}
+.site-team-card img{display:block;width:100%;aspect-ratio:1;object-fit:cover;background:#f1f5f9}
+.site-team-card h2{font-size:1rem;font-weight:750;line-height:1.35;margin:.9rem 1rem 0;color:#0f172a}
+.site-archive-note{background:#f8fafc;border:1px dashed #94a3b8;border-radius:.85rem;padding:1rem 1.15rem;margin:0 0 1rem;color:#334155}
+.site-archive-index{padding-left:1.25rem;list-style:decimal}
+.site-archive-index li{margin:.45rem 0;color:#334155}
+.site-archive-index time{font-weight:700;color:#475569}
+@media(max-width:700px){.site-stat-row{grid-template-columns:1fr}}
