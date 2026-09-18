@@ -105,3 +105,16 @@
     catch (_) { preview.focus(); preview.select(); status.textContent = "Виділено текст. Скопіюйте його через меню пристрою."; }
   });
 })();
+
+(function () {
+  "use strict";
+  var file = (location.pathname.split("/").pop() || "index.html").split("?")[0];
+  if (!file) file = "index.html";
+  if (file.indexOf(".html") === -1 && file !== "") return;
+  document.querySelectorAll(".site-header [aria-current='page']").forEach(function (el) {
+    /* Keep server-rendered current page; only fill gaps on alias URLs. */
+  });
+  document.querySelectorAll(".site-header a[href]").forEach(function (link) {
+    if (link.getAttribute("href") === file) link.setAttribute("aria-current", "page");
+  });
+})();
