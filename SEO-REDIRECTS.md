@@ -1,22 +1,32 @@
-# Пошук: andriukfoundation.com — основний сайт
+# Search: andriukfoundation.com is the primary site
 
-Два домени фонду зараз конкурують у Google: **andriukfoundation.com** (цей репозиторій, GitHub Pages) і **andriukfoundation.org** (окремий WordPress). Користувач просив, щоб у пошуку перемагав .com.
+The foundation currently has two public sites that compete in Google:
 
-Цей репозиторій **не керує** хостингом .org. Редиректи на WordPress треба налаштувати окремо.
+- **andriukfoundation.com** — this GitHub Pages repository (keep as primary)
+- **andriukfoundation.org** — separate WordPress hosting (must 301 to .com)
 
-## Що вже зроблено на .com
+User request: «І два сайти б’ються в пошуку» — .com should win.
 
-- Кожна HTML-сторінка має `<link rel="canonical">` лише на `https://andriukfoundation.com/…`.
-- У JSON-LD організації `url` = `https://andriukfoundation.com/`; колишній домен зазначено в `sameAs`, не як основну адресу.
-- `sitemap.xml` містить лише URL .com.
-- `robots.txt` вказує на sitemap .com.
-- Герб фонду — favicon, `apple-touch-icon` і `og:image` на `https://andriukfoundation.com/images/logo-andriuk-foundation.jpg`.
+## This repository cannot change .org
 
-## Що треба зробити на .org (поза цим репозиторієм)
+WordPress on **andriukfoundation.org is not in this repo**. No commit here can add server 301s, change the .org canonical, or edit Search Console for that host. A parent/operator must configure .org separately.
 
-1. У Google Search Console позначити **andriukfoundation.com** основним доменом.
-2. На WordPress .org увімкнути **301** з кожного шляху .org на відповідний шлях .com (таблиця `redirects-org-to-com.csv`).
-3. Після 301 — подати зміну адреси в Search Console і оновити sitemap .org або вимкнути індексацію .org.
-4. Не залишати .org у `url` / canonical як канонічний сайт.
+## Already done on .com (this repo)
 
-Без 301 з .org пошук і далі може показувати обидва сайти.
+1. Every HTML page has `<link rel="canonical" href="https://andriukfoundation.com/…">` for its own path (redirect stubs point at the live .com URL).
+2. JSON-LD NGO `url` is `https://andriukfoundation.com/`. `https://andriukfoundation.org/` is only in `sameAs`, not the primary URL.
+3. `sitemap.xml` and `robots.txt` list only .com URLs.
+4. Favicon / `og:image` use `https://andriukfoundation.com/images/logo-andriuk-foundation.jpg`.
+
+Archive article **photos** may still load from `andriukfoundation.org/wp-content/…`. Those are image files, not page canonicals.
+
+## What to do on .org and in Search Console
+
+Use the mapping in `redirects-org-to-com.csv` (`from` = .org, `to` = matching .com path).
+
+1. In Google Search Console, set **andriukfoundation.com** as the primary domain.
+2. On WordPress .org, add **301** redirects from each .org URL to the matching .com path in that CSV.
+3. After 301s work, use Search Console **Change of address** (.org → .com). Stop publishing a .org sitemap, or noindex .org.
+4. Do not leave .org as the canonical `url` on WordPress.
+
+Until .org returns 301, Google can keep showing both sites.
