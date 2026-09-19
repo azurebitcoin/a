@@ -7,14 +7,19 @@ on:
       - main
       - cursor/ad-grants-site-quality-246e
 
+permissions:
+  contents: read
+
 jobs:
   local-links:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out repository
+        uses: actions/checkout@v4
+
       - name: Check local links and assets
-        shell: python
         run: |
+          python3 - <<'PY'
           from html.parser import HTMLParser
           from pathlib import Path
           from urllib.parse import urlsplit
@@ -26,24 +31,30 @@ jobs:
               def __init__(self, file):
                   super().__init__()
                   self.file = file
+
               def handle_starttag(self, tag, attrs):
                   for key, value in attrs:
                       if key not in {"href", "src"} or not value:
                           continue
                       if value.startswith(("#", "mailto:", "tel:", "javascript:", "data:", "http://", "https://", "//")):
                           continue
+
                       path = urlsplit(value).path
                       if not path:
                           continue
+
                       target = (root / path.lstrip("/")) if path.startswith("/") else (self.file.parent / path)
                       target = target.resolve()
+
                       try:
                           target.relative_to(root)
                       except ValueError:
                           failures.append(f"{self.file}: target escapes repository: {value}")
                           continue
+
                       if path.endswith("/"):
                           target = target / "index.html"
+
                       if not target.exists():
                           failures.append(f"{self.file}: missing {value}")
 
@@ -52,6 +63,9 @@ jobs:
               parser.feed(file.read_text(encoding="utf-8"))
 
           if failures:
-              print("\n".join(failures))
+              for failure in failures:
+                  print(failure)
               raise SystemExit(f"{len(failures)} broken local link(s)/asset reference(s) found")
+
           print("All local HTML links and asset references resolve.")
+          PY
