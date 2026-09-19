@@ -102,3 +102,39 @@ body{overflow-wrap:break-word}
 .site-archive-index li{margin:.45rem 0;color:#334155}
 .site-archive-index time{font-weight:700;color:#475569}
 @media(max-width:700px){.site-stat-row{grid-template-columns:1fr}}
+
+/* Homepage: exhibition photo strip under the header + founder portrait in hero. */
+.site-photo-menu{background:#f8fafc;border-bottom:1px solid #dbe3ec}
+.site-photo-menu-inner{max-width:1240px;margin:auto;padding:.7rem 1.25rem .85rem}
+.site-photo-menu-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.55rem}
+.site-photo-menu-head p{margin:0;color:#0f172a;font-weight:750;font-size:.95rem}
+.site-photo-menu-head a{color:#1e3a8a;font-weight:700;text-decoration:underline;text-underline-offset:.18rem;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+.site-photo-menu-grid{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(148px,1fr);gap:.55rem;overflow-x:auto;padding-bottom:.15rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.site-photo-tile{position:relative;display:block;border-radius:.75rem;overflow:hidden;scroll-snap-align:start;text-decoration:none;color:#fff;background:#0f172a;min-height:44px}
+.site-photo-tile img{display:block;width:100%;height:5.75rem;object-fit:cover}
+.site-photo-tile span{position:absolute;left:0;right:0;bottom:0;padding:.4rem .5rem;font-size:.75rem;font-weight:700;line-height:1.25;background:linear-gradient(transparent,#0f172ae6)}
+.site-photo-tile:hover,.site-photo-tile:focus-visible{outline-offset:3px}
+.site-photo-tile:hover span,.site-photo-tile:focus-visible span{text-decoration:underline}
+.site-hero-grid{display:grid;gap:1.15rem 2.5rem}
+.site-hero-kicker{justify-self:start}
+.site-hero-portrait{margin:0}
+.site-hero-portrait img{display:block;width:100%;height:auto;max-height:28rem;aspect-ratio:3/4;object-fit:cover;object-position:50% 8%;border-radius:1.5rem;background:#0b1220;box-shadow:0 18px 40px #0005}
+.site-hero-portrait figcaption{margin-top:.65rem;font-size:.875rem;font-weight:600;color:#cbd5e1}
+@media(min-width:900px){
+  .site-photo-menu-grid{grid-auto-flow:unset;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible}
+  .site-photo-tile img{height:7.25rem}
+}
+@media(min-width:1024px){
+  .site-hero-grid{grid-template-columns:minmax(0,1.15fr) minmax(16rem,.85fr);grid-template-areas:"kicker photo" "title photo" "lead photo" "ctas support";align-items:start}
+  .site-hero-kicker{grid-area:kicker}
+  .site-hero-grid>h1{grid-area:title}
+  .site-hero-portrait{grid-area:photo}
+  .site-hero-lead{grid-area:lead}
+  .site-hero-ctas{grid-area:ctas}
+  .site-hero-grid>.site-hero-support{grid-area:support}
+  .site-hero-portrait img{max-height:none;aspect-ratio:3/4}
+}
+@media(max-width:640px){
+  .site-hero-portrait{max-width:17.5rem;margin-inline:auto}
+  .site-hero-portrait img{max-height:22rem;aspect-ratio:4/5}
+}
