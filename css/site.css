@@ -162,3 +162,29 @@ body{overflow-wrap:break-word}
 @media(max-width:640px){
   .site-hero-portrait{max-width:17.5rem;margin-inline:auto}
 }
+
+/* Gallery by aid type + program photo strips + homepage activity grid. */
+.site-gallery-nav{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:1.5rem 0 2rem}
+.site-gallery-nav a{padding:.55rem .85rem;border:1px solid #bfdbfe;border-radius:.5rem;background:#fff;color:#1e3a8a;font-weight:700;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.site-gallery-nav a:hover,.site-gallery-nav a:focus-visible{background:#1e3a8a;color:#fff;border-color:#1e3a8a}
+.site-gallery-section{scroll-margin-top:1.25rem;margin:2.5rem 0 0}
+.site-gallery-section h2{font-size:clamp(1.45rem,4vw,2rem);font-weight:800;color:#0f172a;margin:0 0 .5rem}
+.site-gallery-kicker{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;align-items:baseline;margin-bottom:1rem}
+.site-gallery-kicker a{color:#1e3a8a;font-weight:700;text-decoration:underline;text-underline-offset:.18rem}
+.site-gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:1rem}
+.site-gallery-grid figure{margin:0;background:#fff;border-radius:1rem;overflow:hidden;box-shadow:0 4px 16px #0f172a0a;border:1px solid #dbe3ec}
+.site-gallery-grid img{display:block;width:100%;height:16rem;object-fit:cover;background:#e2e8f0}
+.site-gallery-grid figcaption{padding:.7rem .85rem .85rem;font-size:.875rem;line-height:1.4;color:#334155}
+.site-program-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,140px),1fr));gap:.65rem;margin:1.15rem 0 0}
+.site-program-strip figure{margin:0;border-radius:.85rem;overflow:hidden;background:#0f172a}
+.site-program-strip img{display:block;width:100%;height:7.5rem;object-fit:cover}
+.site-program-more{margin:.85rem 0 0}
+.site-activity-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,160px),1fr));gap:.7rem;margin-top:1.25rem}
+.site-activity-tile{position:relative;display:block;border-radius:.85rem;overflow:hidden;text-decoration:none;color:#fff;background:#0f172a;min-height:44px}
+.site-activity-tile img{display:block;width:100%;height:8.5rem;object-fit:cover}
+.site-activity-tile span{position:absolute;left:0;right:0;bottom:0;padding:.45rem .55rem;font-size:.78rem;font-weight:700;line-height:1.25;background:linear-gradient(transparent,#0f172ae8)}
+.site-activity-tile:hover span,.site-activity-tile:focus-visible span{text-decoration:underline}
+@media(min-width:900px){
+  .site-program-strip img{height:8.75rem}
+  .site-activity-tile img{height:9.5rem}
+}
