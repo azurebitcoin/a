@@ -232,3 +232,13 @@
     if (link.getAttribute("href") === file) link.setAttribute("aria-current", "page");
   });
 })();
+
+(function () {
+  "use strict";
+  document.addEventListener("play", function (event) {
+    if (!event.target || event.target.tagName !== "VIDEO") return;
+    document.querySelectorAll("video").forEach(function (video) {
+      if (video !== event.target) video.pause();
+    });
+  }, true);
+})();
