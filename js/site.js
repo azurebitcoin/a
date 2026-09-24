@@ -158,7 +158,7 @@
       }
     }
   }
-  document.addEventListener("andriuk-analytics-ready", sendPageConversions);
+  window.addEventListener("andriuk-analytics-ready", sendPageConversions);
   sendPageConversions();
 
   function bindLetterTools(preview, mail, status) {
