@@ -17,18 +17,14 @@
     wait_for_update: 500
   });
 
-  var analyticsStarted = false;
-  function startAnalytics() {
-    if (analyticsStarted) return;
-    analyticsStarted = true;
-    window.gtag("js", new Date());
-    window.gtag("config", GA4_MEASUREMENT_ID);
-    var script = document.createElement("script");
-    script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_MEASUREMENT_ID;
-    document.head.appendChild(script);
-    window.dispatchEvent(new Event("andriuk-analytics-ready"));
-  }
+  // Consent Mode v2: the Google tag must load before a cookie choice so
+  // crawlers can see it. Storage stays denied until the visitor accepts.
+  var script = document.createElement("script");
+  script.async = true;
+  script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_MEASUREMENT_ID;
+  (document.head || document.documentElement).appendChild(script);
+  window.gtag("js", new Date());
+  window.gtag("config", GA4_MEASUREMENT_ID);
 
   window.andriukAnalytics = {
     measurementId: GA4_MEASUREMENT_ID,
@@ -54,12 +50,15 @@
     if (settings) settings.style.display = show ? "none" : "block";
   }
   function choose(choice) {
+    var storage = choice === "granted" ? "granted" : "denied";
     window.gtag("consent", "update", {
-      analytics_storage: choice, ad_storage: "denied",
-      ad_user_data: "denied", ad_personalization: "denied"
+      analytics_storage: storage,
+      ad_storage: storage,
+      ad_user_data: storage,
+      ad_personalization: storage
     });
     try { localStorage.setItem(key, choice); } catch (_) {}
-    if (choice === "granted") startAnalytics();
+    if (choice === "granted") window.dispatchEvent(new Event("andriuk-analytics-ready"));
     showBanner(false);
   }
   var accept = document.getElementById("cookie-accept");
@@ -159,7 +158,7 @@
       }
     }
   }
-  document.addEventListener("andriuk-analytics-ready", sendPageConversions);
+  window.addEventListener("andriuk-analytics-ready", sendPageConversions);
   sendPageConversions();
 
   function bindLetterTools(preview, mail, status) {
