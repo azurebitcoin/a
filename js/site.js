@@ -9,22 +9,37 @@
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
-  window.gtag("consent", "default", {
-    analytics_storage: "denied",
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-    wait_for_update: 500
-  });
 
-  // Consent Mode v2: the Google tag must load before a cookie choice so
-  // crawlers can see it. Storage stays denied until the visitor accepts.
-  var script = document.createElement("script");
-  script.async = true;
-  script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_MEASUREMENT_ID;
-  (document.head || document.documentElement).appendChild(script);
-  window.gtag("js", new Date());
-  window.gtag("config", GA4_MEASUREMENT_ID);
+  function staticGtagPresent() {
+    var needle = "googletagmanager.com/gtag/js?id=" + GA4_MEASUREMENT_ID;
+    var scripts = document.getElementsByTagName("script");
+    for (var i = 0; i < scripts.length; i++) {
+      var raw = scripts[i].getAttribute("src") || "";
+      var abs = scripts[i].src || "";
+      if (raw.indexOf(needle) !== -1 || abs.indexOf(needle) !== -1) return true;
+    }
+    return false;
+  }
+
+  // Pages include a static Consent Mode snippet in <head> so Google Ads can
+  // see the tag in view-source. Do not append a second gtag.js or send a
+  // second config when that snippet is already there. Fallback covers any
+  // page that still loads this file without the static tag.
+  if (!staticGtagPresent()) {
+    window.gtag("consent", "default", {
+      analytics_storage: "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      wait_for_update: 500
+    });
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_MEASUREMENT_ID;
+    (document.head || document.documentElement).appendChild(script);
+    window.gtag("js", new Date());
+    window.gtag("config", GA4_MEASUREMENT_ID);
+  }
 
   window.andriukAnalytics = {
     measurementId: GA4_MEASUREMENT_ID,
