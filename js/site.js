@@ -1,10 +1,11 @@
 (function () {
   "use strict";
   var GA4_MEASUREMENT_ID = "G-8ES52L4R1P";
-  // Google Ads conversion ID is not in this repository.
-  // When a real conversion action exists, set it here (example format only):
-  //   var GOOGLE_ADS_CONVERSION = "AW-XXXXXXXXXX/YYYY";
-  // and pass send_to on conversion events. Do not invent IDs.
+  var GOOGLE_ADS_ID = "AW-18467119985";
+  // Purchase («Покупка») is a static page-load snippet on thank-you.html and
+  // dyakuyemo-za-pidtrymku.html only (send_to AW-18467119985/lF7tCIShz4EdEPHG5-VE).
+  // Leave this empty so send() does not attach that send_to to other events
+  // or fire the purchase conversion a second time from donation_complete.
   var GOOGLE_ADS_CONVERSION = "";
 
   window.dataLayer = window.dataLayer || [];
@@ -39,10 +40,12 @@
     (document.head || document.documentElement).appendChild(script);
     window.gtag("js", new Date());
     window.gtag("config", GA4_MEASUREMENT_ID);
+    window.gtag("config", GOOGLE_ADS_ID);
   }
 
   window.andriukAnalytics = {
     measurementId: GA4_MEASUREMENT_ID,
+    adsId: GOOGLE_ADS_ID,
     adsConversion: GOOGLE_ADS_CONVERSION,
     allowed: function () {
       try { return localStorage.getItem("andriuk_cookie_consent") === "granted"; } catch (_) { return false; }
