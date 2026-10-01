@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-<!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) + Enhanced Conversions for donation thank-you -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Thank-you after donation: grant ad_storage + ad_user_data for Ads enhanced conversions
   gtag('consent', 'default', {
-    'analytics_storage': 'denied',
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
+    'analytics_storage': 'granted',
+    'ad_storage': 'granted',
+    'ad_user_data': 'granted',
     'ad_personalization': 'denied',
     'wait_for_update': 500
   });
@@ -17,12 +18,12 @@
 <script>
   gtag('js', new Date());
   gtag('config', 'G-8ES52L4R1P');
-  gtag('config', 'AW-18467119985');
+  gtag('config', 'AW-18467119985', { 'allow_enhanced_conversions': true });
 </script>
-<!-- Event snippet for Покупка conversion page -->
+<!-- Event snippet for Донат conversion page (enhanced conversions) -->
 <script>
-  var donationTxn = '';
   var donationParams = new URLSearchParams(window.location.search);
+  var donationTxn = '';
   ['orderReference', 'order_id', 'transaction_id', 'transactionId', 'productCount'].some(function (key) {
     var value = donationParams.get(key);
     if (value && value.trim()) {
@@ -47,6 +48,31 @@
     try {
       window.sessionStorage.setItem('af_donation_txn', donationTxn);
     } catch (e) {}
+  }
+
+  var donationEmail = '';
+  ['email', 'clientEmail', 'client_email', 'Email', 'customerEmail'].some(function (key) {
+    var value = donationParams.get(key);
+    if (value && value.trim() && value.indexOf('@') > 0) {
+      donationEmail = value.trim();
+      return true;
+    }
+    return false;
+  });
+  if (donationEmail) {
+    try {
+      window.sessionStorage.setItem('af_donation_email', donationEmail);
+    } catch (e) {}
+  }
+  if (!donationEmail) {
+    try {
+      donationEmail = window.sessionStorage.getItem('af_donation_email') || '';
+    } catch (e) {}
+  }
+
+  // Enhanced conversions: pass donor email when available (hashed by Google tag)
+  if (donationEmail) {
+    gtag('set', 'user_data', { 'email': donationEmail });
   }
 
   gtag('event', 'conversion', {
