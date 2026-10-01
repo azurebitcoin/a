@@ -21,11 +21,39 @@
 </script>
 <!-- Event snippet for Покупка conversion page -->
 <script>
+  var donationTxn = '';
+  var donationParams = new URLSearchParams(window.location.search);
+  ['orderReference', 'order_id', 'transaction_id', 'transactionId', 'productCount'].some(function (key) {
+    var value = donationParams.get(key);
+    if (value && value.trim()) {
+      donationTxn = value.trim();
+      return true;
+    }
+    return false;
+  });
+
+  if (donationTxn) {
+    try {
+      window.sessionStorage.setItem('af_donation_txn', donationTxn);
+    } catch (e) {}
+  }
+  if (!donationTxn) {
+    try {
+      donationTxn = window.sessionStorage.getItem('af_donation_txn') || '';
+    } catch (e) {}
+  }
+  if (!donationTxn) {
+    donationTxn = 'af_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+    try {
+      window.sessionStorage.setItem('af_donation_txn', donationTxn);
+    } catch (e) {}
+  }
+
   gtag('event', 'conversion', {
       'send_to': 'AW-18467119985/lF7tCIShz4EdEPHG5-VE',
       'value': 1.0,
       'currency': 'USD',
-      'transaction_id': ''
+      'transaction_id': donationTxn
   });
 </script>
 <link rel="icon" href="/favicon.ico" sizes="any">

@@ -21,11 +21,39 @@
 </script>
 <!-- Event snippet for Покупка conversion page -->
 <script>
+  var donationTxn = '';
+  var donationParams = new URLSearchParams(window.location.search);
+  ['orderReference', 'order_id', 'transaction_id', 'transactionId', 'productCount'].some(function (key) {
+    var value = donationParams.get(key);
+    if (value && value.trim()) {
+      donationTxn = value.trim();
+      return true;
+    }
+    return false;
+  });
+
+  if (donationTxn) {
+    try {
+      window.sessionStorage.setItem('af_donation_txn', donationTxn);
+    } catch (e) {}
+  }
+  if (!donationTxn) {
+    try {
+      donationTxn = window.sessionStorage.getItem('af_donation_txn') || '';
+    } catch (e) {}
+  }
+  if (!donationTxn) {
+    donationTxn = 'af_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+    try {
+      window.sessionStorage.setItem('af_donation_txn', donationTxn);
+    } catch (e) {}
+  }
+
   gtag('event', 'conversion', {
       'send_to': 'AW-18467119985/lF7tCIShz4EdEPHG5-VE',
       'value': 1.0,
       'currency': 'USD',
-      'transaction_id': ''
+      'transaction_id': donationTxn
   });
 </script>
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -73,7 +101,7 @@
             <h2>Якщо ви щойно завершили оплату</h2>
             <p>Збережіть квитанцію або підтвердження WayForPay. Фонд спрямовує зібрані кошти на статутні благодійні цілі. Публікації про діяльність зібрано в розділі звітів.</p>
             <p>Якщо платіж не завершено або сторінка відкрилася випадково, ви можете повернутися до оформлення внеску. Сам перегляд цієї сторінки не є пожертвою.</p>
-            <!-- WayForPay donate links do not document a success URL query parameter. In the WayForPay merchant cabinet set Approved URL / Return URL to https://andriukfoundation.com/thank-you.html. The cabinet accepts one return address; this Ukrainian confirmation page stays available from the thank-you page. -->
+            <!-- WayForPay donate links do not document a success URL query parameter. In the WayForPay merchant cabinet set Approved URL / Return URL to https://andriukfoundation.com/dyakuyemo-za-pidtrymku.html -->
             <div class="site-actions">
                 <a class="site-button" href="news-stories.html">Звіти та новини</a>
                 <a class="site-button site-button-secondary" href="pidtrymaty.html">Повернутися до внеску</a>
