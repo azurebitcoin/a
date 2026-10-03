@@ -67,14 +67,25 @@
     if (banner) banner.style.display = show ? "block" : "none";
     if (settings) settings.style.display = show ? "none" : "block";
   }
+  // Donation thank-you pages queue the Purchase conversion under a granted
+  // ad_storage / ad_user_data default (wait_for_update 500). A consent update
+  // that denies those types inside that window drops the hit.
+  function donationThankYouPage() {
+    var path = "";
+    try { path = window.location.pathname || ""; } catch (_) {}
+    return path.indexOf("thank-you.html") !== -1 || path.indexOf("dyakuyemo-za-pidtrymku.html") !== -1;
+  }
   function choose(choice) {
     var storage = choice === "granted" ? "granted" : "denied";
-    window.gtag("consent", "update", {
+    var update = {
       analytics_storage: storage,
-      ad_storage: storage,
-      ad_user_data: storage,
       ad_personalization: storage
-    });
+    };
+    if (!(donationThankYouPage() && storage === "denied")) {
+      update.ad_storage = storage;
+      update.ad_user_data = storage;
+    }
+    window.gtag("consent", "update", update);
     try { localStorage.setItem(key, choice); } catch (_) {}
     if (choice === "granted") window.dispatchEvent(new Event("andriuk-analytics-ready"));
     showBanner(false);
