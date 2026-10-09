@@ -134,6 +134,8 @@ body{overflow-wrap:break-word}
 .site-photo-tile:hover,.site-photo-tile:focus-visible{outline-offset:3px}
 .site-photo-tile:hover span,.site-photo-tile:focus-visible span{text-decoration:underline}
 .site-program-hero{margin:1.25rem 0 0;border-radius:1.25rem;overflow:hidden;background:#0f172a}
+.site-program-video h2{font-size:clamp(1.25rem,3vw,1.6rem);font-weight:800;color:#0f172a;line-height:1.25;margin:0 0 .75rem}
+.site-program-video video{width:100%;height:auto;border-radius:12px;display:block;background:#0f172a}
 .site-program-hero img{display:block;width:100%;height:auto;max-height:22rem;object-fit:cover;object-position:center;background:#0b1220}
 .site-hero-grid{display:flex;flex-direction:column;gap:1.15rem}
 .site-hero-copy{display:contents}
