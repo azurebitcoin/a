@@ -204,6 +204,7 @@ body{overflow-wrap:break-word}
 .site-video-card .site-video-open{margin:0 1.1rem 1.15rem;font-weight:700;color:#1e3a8a;text-decoration:underline;text-underline-offset:.18rem}
 .site-video-card h3{font-size:1.05rem;font-weight:750;line-height:1.35;margin:.9rem 1.1rem .85rem;color:#0f172a}
 .site-testimonial-video{display:block;width:100%;height:auto;background:#0f172a}
+.site-section h2.site-media-heading{margin-top:2.5rem}
 .site-case-heading{margin:2rem 0 0;font-size:clamp(1.25rem,3vw,1.6rem);font-weight:800;color:#0f172a;line-height:1.25}
 .site-case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:1rem;margin-top:1rem}
 .site-case-grid figure{margin:0;background:#fff;border-radius:1rem;overflow:hidden;border:1px solid #dbe3ec;box-shadow:0 4px 16px #0f172a0a}
