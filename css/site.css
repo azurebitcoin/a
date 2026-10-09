@@ -213,3 +213,13 @@ body{overflow-wrap:break-word}
 .site-lang-switch{display:flex;flex-wrap:wrap;gap:.35rem .85rem;margin:.15rem 0 0;font-size:.95rem;font-weight:700}
 .site-lang-switch a{color:#1e3a8a;text-decoration:underline;text-underline-offset:.18rem}
 .site-lang-switch a:hover{color:#172554}
+.site-lang{display:inline-flex;align-items:center;border:1px solid #cbd5e1;border-radius:999px;overflow:hidden;background:#f8fafc;flex:0 0 auto}
+.site-lang a{display:inline-flex;align-items:center;justify-content:center;min-width:2.75rem;min-height:40px;padding:.15rem .6rem;font-size:.78rem;font-weight:800;letter-spacing:.06em;text-decoration:none;color:#334155}
+.site-lang a[aria-current="true"]{background:#1e3a8a;color:#fff}
+.site-lang a:hover{color:#1e3a8a;background:#e2e8f0}
+.site-lang a[aria-current="true"]:hover{background:#172554;color:#fff}
+@media(max-width:420px){
+  .site-header-inner{grid-template-columns:minmax(0,1fr) auto auto}
+  .site-header-inner>.site-lang{grid-column:auto;justify-self:end}
+  .site-header-inner>.site-button{grid-column:auto;max-width:none}
+}
