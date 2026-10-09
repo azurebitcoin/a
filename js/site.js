@@ -1,3 +1,9 @@
+function isEnglishPage() {
+  var lang = "";
+  try { lang = (document.documentElement.getAttribute("lang") || "").toLowerCase(); } catch (_) {}
+  return lang.indexOf("en") === 0;
+}
+
 (function () {
   "use strict";
   var GA4_MEASUREMENT_ID = "G-8ES52L4R1P";
@@ -113,12 +119,16 @@
     var status = document.getElementById("instagram-status");
     feed.hidden = false;
     loadFeed.disabled = true;
-    status.textContent = "Завантажуємо публікації. Якщо стрічка не з’явиться, відкрийте Instagram за посиланням вище.";
+    status.textContent = isEnglishPage()
+      ? "Loading posts. If the feed does not appear, open Instagram using the link above."
+      : "Завантажуємо публікації. Якщо стрічка не з’явиться, відкрийте Instagram за посиланням вище.";
     var script = document.createElement("script");
     script.src = "https://elfsightcdn.com/platform.js";
     script.async = true;
     script.onerror = function () {
-      status.textContent = "Не вдалося завантажити стрічку. Публікації доступні за прямим посиланням на Instagram.";
+      status.textContent = isEnglishPage()
+        ? "The feed could not be loaded. The posts are available on the foundation’s Instagram page."
+        : "Не вдалося завантажити стрічку. Публікації доступні за прямим посиланням на Instagram.";
     };
     document.body.appendChild(script);
   }, { once: true });
@@ -178,7 +188,7 @@
           lead_source: "contact_form",
           lead_topic: topic
         });
-        if (topic === "Волонтерство та партнерство") {
+        if (topic === "Волонтерство та партнерство" || topic === "Volunteering and partnership") {
           fireOnce("andriuk_volunteer_interest_sent", "volunteer_interest", {
             method: "contact_form"
           });
@@ -196,11 +206,15 @@
       copy.addEventListener("click", async function () {
         try {
           await navigator.clipboard.writeText(preview.value);
-          status.textContent = "Текст скопійовано. Вставте його у лист до info@andriukfoundation.com.";
+          status.textContent = isEnglishPage()
+            ? "Text copied. Paste it into an email to info@andriukfoundation.com."
+            : "Текст скопійовано. Вставте його у лист до info@andriukfoundation.com.";
         } catch (_) {
           preview.focus();
           preview.select();
-          status.textContent = "Виділено текст. Скопіюйте його через меню пристрою.";
+          status.textContent = isEnglishPage()
+            ? "The text is selected. Copy it from your device menu."
+            : "Виділено текст. Скопіюйте його через меню пристрою.";
         }
       });
     }
@@ -214,7 +228,9 @@
       var result = document.getElementById("letter-result");
       if (result) result.hidden = false;
       if (status && !status.textContent) {
-        status.textContent = "Текст підготовлено. Щоб фонд отримав звернення, надішліть лист зі своєї пошти.";
+        status.textContent = isEnglishPage()
+          ? "The text is ready. Send the email from your own mailbox so the foundation receives it."
+          : "Текст підготовлено. Щоб фонд отримав звернення, надішліть лист зі своєї пошти.";
       }
     }
   }
@@ -236,7 +252,9 @@
     if (!form.reportValidity()) return;
     var data = new FormData(form);
     var topic = String(data.get("topic") || "");
-    var text = "Добрий день!\n\nТема: " + topic + "\nІм’я: " + data.get("sender").trim() + "\nМісто: " + data.get("city").trim() + "\nКонтакт для відповіді: " + data.get("contact").trim() + "\n\n" + data.get("message").trim();
+    var text = isEnglishPage()
+      ? "Hello,\n\nTopic: " + topic + "\nName: " + data.get("sender").trim() + "\nCity: " + data.get("city").trim() + "\nReply contact: " + data.get("contact").trim() + "\n\n" + data.get("message").trim()
+      : "Добрий день!\n\nТема: " + topic + "\nІм’я: " + data.get("sender").trim() + "\nМісто: " + data.get("city").trim() + "\nКонтакт для відповіді: " + data.get("contact").trim() + "\n\n" + data.get("message").trim();
     storageSet("andriuk_letter_preview", text);
     storageSet("andriuk_letter_topic", topic);
     storageSet("andriuk_lead_pending", "1");
@@ -244,7 +262,9 @@
     if (mail) mail.href = "mailto:info@andriukfoundation.com?subject=" + encodeURIComponent(topic) + "&body=" + encodeURIComponent(text);
     window.location.assign("dyakuyemo-za-zvernennya.html");
     if (result) result.hidden = false;
-    if (status) status.textContent = "Текст підготовлено. Якщо сторінка подяки не відкрилася, надішліть лист зі своєї пошти.";
+    if (status) status.textContent = isEnglishPage()
+      ? "The text is ready. If the thank-you page did not open, send the email from your own mailbox."
+      : "Текст підготовлено. Якщо сторінка подяки не відкрилася, надішліть лист зі своєї пошти.";
   });
 })();
 

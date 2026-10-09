@@ -1,38 +1,465 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://andriukfoundation.com/</loc><lastmod>2026-09-24</lastmod></url>
-  <url><loc>https://andriukfoundation.com/yak-otrymaty-dopomogu.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/pidtrymaty.html</loc><lastmod>2026-09-26</lastmod></url>
-  <url><loc>https://andriukfoundation.com/donate.html</loc><lastmod>2026-09-24</lastmod></url>
-  <url><loc>https://andriukfoundation.com/thank-you.html</loc><lastmod>2026-09-26</lastmod></url>
-  <url><loc>https://andriukfoundation.com/dyakuyemo-za-pidtrymku.html</loc><lastmod>2026-09-24</lastmod></url>
-  <url><loc>https://andriukfoundation.com/dyakuyemo-za-zvernennya.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/news-stories.html</loc><lastmod>2026-09-21</lastmod></url>
-  <url><loc>https://andriukfoundation.com/videozvity.html</loc><lastmod>2026-09-21</lastmod></url>
-  <url><loc>https://andriukfoundation.com/misiya.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/pro-nas.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/komanda.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/galereya.html</loc><lastmod>2026-09-20</lastmod></url>
-  <url><loc>https://andriukfoundation.com/arhiv.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/kontakti.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/nashi-proekty.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/dopomoga-viyskovim.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/stomatologiya-dlya-viyskovih.html</loc><lastmod>2026-09-20</lastmod></url>
-  <url><loc>https://andriukfoundation.com/dopomoga-dityam.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/dopomoga-pereselentsyam.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/dopomoga-likarnyam.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/dopomoga-tvarinam.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/yak-doluchytysia.html</loc><lastmod>2026-09-19</lastmod></url>
-  <url><loc>https://andriukfoundation.com/dogovir-publichnoi-oferti.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/politika-konfidentsiynosti.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/legal.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/zvity.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/zvity-arhiv-1.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/zvity-arhiv-2.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/zvity-arhiv-3.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/zvity-arhiv-4.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/zvity-arhiv-5.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/zvity-arhiv-6.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/zvity-arhiv-7.html</loc><lastmod>2026-09-18</lastmod></url>
-  <url><loc>https://andriukfoundation.com/zvity-arhiv-8.html</loc><lastmod>2026-09-18</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://andriukfoundation.com/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/yak-otrymaty-dopomogu.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/yak-otrymaty-dopomogu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/yak-otrymaty-dopomogu.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/yak-otrymaty-dopomogu.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/yak-otrymaty-dopomogu.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/yak-otrymaty-dopomogu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/yak-otrymaty-dopomogu.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/yak-otrymaty-dopomogu.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/pidtrymaty.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/pidtrymaty.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/donate.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/pidtrymaty.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/donate.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/pidtrymaty.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/donate.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/pidtrymaty.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/dyakuyemo-za-pidtrymku.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dyakuyemo-za-pidtrymku.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/thank-you.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dyakuyemo-za-pidtrymku.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/thank-you.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dyakuyemo-za-pidtrymku.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/thank-you.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dyakuyemo-za-pidtrymku.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/dyakuyemo-za-zvernennya.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dyakuyemo-za-zvernennya.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/dyakuyemo-za-zvernennya.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dyakuyemo-za-zvernennya.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/dyakuyemo-za-zvernennya.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dyakuyemo-za-zvernennya.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/dyakuyemo-za-zvernennya.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dyakuyemo-za-zvernennya.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/news-stories.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/news-stories.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/news-stories.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/news-stories.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/news-stories.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/news-stories.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/news-stories.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/news-stories.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/videozvity.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/videozvity.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/videozvity.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/videozvity.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/videozvity.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/videozvity.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/videozvity.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/videozvity.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/misiya.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/misiya.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/misiya.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/misiya.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/misiya.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/misiya.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/misiya.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/misiya.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/pro-nas.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/pro-nas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/pro-nas.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/pro-nas.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/pro-nas.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/pro-nas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/pro-nas.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/pro-nas.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/komanda.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/komanda.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/komanda.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/komanda.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/komanda.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/komanda.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/komanda.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/komanda.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/galereya.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/galereya.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/galereya.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/galereya.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/galereya.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/galereya.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/galereya.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/galereya.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/arhiv.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/arhiv.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/arhiv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/arhiv.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/arhiv.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/arhiv.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/arhiv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/arhiv.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/kontakti.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/kontakti.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/kontakti.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/kontakti.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/kontakti.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/kontakti.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/kontakti.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/kontakti.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/nashi-proekty.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/nashi-proekty.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/nashi-proekty.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/nashi-proekty.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/nashi-proekty.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/nashi-proekty.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/nashi-proekty.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/nashi-proekty.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/dopomoga-viyskovim.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dopomoga-viyskovim.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/dopomoga-viyskovim.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dopomoga-viyskovim.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/dopomoga-viyskovim.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dopomoga-viyskovim.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/dopomoga-viyskovim.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dopomoga-viyskovim.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/stomatologiya-dlya-viyskovih.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/stomatologiya-dlya-viyskovih.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/stomatologiya-dlya-viyskovih.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/stomatologiya-dlya-viyskovih.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/stomatologiya-dlya-viyskovih.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/stomatologiya-dlya-viyskovih.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/stomatologiya-dlya-viyskovih.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/stomatologiya-dlya-viyskovih.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/dopomoga-dityam.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dopomoga-dityam.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/dopomoga-dityam.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dopomoga-dityam.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/dopomoga-dityam.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dopomoga-dityam.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/dopomoga-dityam.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dopomoga-dityam.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/dopomoga-pereselentsyam.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dopomoga-pereselentsyam.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/dopomoga-pereselentsyam.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dopomoga-pereselentsyam.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/dopomoga-pereselentsyam.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dopomoga-pereselentsyam.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/dopomoga-pereselentsyam.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dopomoga-pereselentsyam.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/dopomoga-likarnyam.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dopomoga-likarnyam.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/dopomoga-likarnyam.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dopomoga-likarnyam.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/dopomoga-likarnyam.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dopomoga-likarnyam.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/dopomoga-likarnyam.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dopomoga-likarnyam.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/dopomoga-tvarinam.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dopomoga-tvarinam.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/dopomoga-tvarinam.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dopomoga-tvarinam.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/dopomoga-tvarinam.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dopomoga-tvarinam.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/dopomoga-tvarinam.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dopomoga-tvarinam.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/yak-doluchytysia.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/yak-doluchytysia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/yak-doluchytysia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/yak-doluchytysia.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/yak-doluchytysia.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/yak-doluchytysia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/yak-doluchytysia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/yak-doluchytysia.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/dogovir-publichnoi-oferti.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dogovir-publichnoi-oferti.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/dogovir-publichnoi-oferti.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dogovir-publichnoi-oferti.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/dogovir-publichnoi-oferti.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/dogovir-publichnoi-oferti.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/dogovir-publichnoi-oferti.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/dogovir-publichnoi-oferti.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/politika-konfidentsiynosti.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/politika-konfidentsiynosti.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/politika-konfidentsiynosti.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/politika-konfidentsiynosti.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/politika-konfidentsiynosti.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/politika-konfidentsiynosti.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/politika-konfidentsiynosti.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/politika-konfidentsiynosti.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/legal.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/legal.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/legal.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/legal.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/zvity.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/zvity.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/zvity-arhiv-1.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-1.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-1.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-1.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/zvity-arhiv-1.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-1.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-1.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-1.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/zvity-arhiv-2.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-2.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-2.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/zvity-arhiv-2.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-2.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-2.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/zvity-arhiv-3.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-3.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-3.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-3.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/zvity-arhiv-3.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-3.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-3.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-3.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/zvity-arhiv-4.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-4.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-4.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-4.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/zvity-arhiv-4.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-4.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-4.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-4.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/zvity-arhiv-5.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-5.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-5.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-5.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/zvity-arhiv-5.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-5.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-5.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-5.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/zvity-arhiv-6.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-6.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-6.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-6.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/zvity-arhiv-6.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-6.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-6.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-6.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/zvity-arhiv-7.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-7.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-7.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-7.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/zvity-arhiv-7.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-7.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-7.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-7.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/zvity-arhiv-8.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-8.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-8.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-8.html"/>
+  </url>
+  <url>
+    <loc>https://andriukfoundation.com/en/zvity-arhiv-8.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://andriukfoundation.com/zvity-arhiv-8.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://andriukfoundation.com/en/zvity-arhiv-8.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://andriukfoundation.com/zvity-arhiv-8.html"/>
+  </url>
 </urlset>
