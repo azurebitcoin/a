@@ -5,10 +5,11 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Thank-you after donation: grant ad_storage + ad_user_data for Ads enhanced conversions
   gtag('consent', 'default', {
-    'analytics_storage': 'denied',
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
+    'analytics_storage': 'granted',
+    'ad_storage': 'granted',
+    'ad_user_data': 'granted',
     'ad_personalization': 'denied',
     'wait_for_update': 500
   });
@@ -21,11 +22,39 @@
 </script>
 <!-- Event snippet for Покупка conversion page -->
 <script>
+  var donationTxn = '';
+  var donationParams = new URLSearchParams(window.location.search);
+  ['orderReference', 'order_id', 'transaction_id', 'transactionId', 'productCount'].some(function (key) {
+    var value = donationParams.get(key);
+    if (value && value.trim()) {
+      donationTxn = value.trim();
+      return true;
+    }
+    return false;
+  });
+
+  if (donationTxn) {
+    try {
+      window.sessionStorage.setItem('af_donation_txn', donationTxn);
+    } catch (e) {}
+  }
+  if (!donationTxn) {
+    try {
+      donationTxn = window.sessionStorage.getItem('af_donation_txn') || '';
+    } catch (e) {}
+  }
+  if (!donationTxn) {
+    donationTxn = 'af_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+    try {
+      window.sessionStorage.setItem('af_donation_txn', donationTxn);
+    } catch (e) {}
+  }
+
   gtag('event', 'conversion', {
       'send_to': 'AW-18467119985/lF7tCIShz4EdEPHG5-VE',
       'value': 1.0,
       'currency': 'USD',
-      'transaction_id': ''
+      'transaction_id': donationTxn
   });
 </script>
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -34,8 +63,8 @@
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/site.css?v=20260923en">
-    <script defer src="js/site.js?v=20260925a"></script>
+    <link rel="stylesheet" href="css/site.css?v=20261009en">
+    <script defer src="js/site.js?v=20261009en"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дякуємо за підтримку — МБФ Олександра Андріюка</title>
     <meta name="description" content="Дякуємо за благодійну пожертву Міжнародному благодійному фонду Олександра Андріюка. Ваш внесок підтримує допомогу військовим, дітям, переселенцям і лікарням.">
@@ -59,7 +88,7 @@
 <a class="site-brand" href="index.html"><img src="images/logo-andriuk-foundation.jpg" alt="" width="48" height="48"><span>МБФ Олександра Андріюка<small>Благодійна організація · ЄДРПОУ 41481057</small></span></a>
 <nav class="site-nav-desktop" aria-label="Основна навігація"><a href="yak-otrymaty-dopomogu.html">Допомога</a><a href="pidtrymaty.html">Підтримати</a><a href="donate.html" lang="en">Donate</a><span class="site-nav-about"><a href="news-stories.html">Звіти</a><details class="site-dropdown"><summary aria-label="Ще звіти">▾</summary><div><a href="videozvity.html">Відеозвіти</a><a href="zvity.html">Архів діяльності</a></div></details></span><span class="site-nav-about"><a href="misiya.html">Про фонд</a><details class="site-dropdown"><summary aria-label="Ще про фонд">▾</summary><div><a href="pro-nas.html">Історія засновника</a><a href="komanda.html">Команда</a><a href="galereya.html">Галерея</a><a href="arhiv.html">Архів 2017–2018</a></div></details></span><details class="site-dropdown site-dropdown-end"><summary>Програми</summary><div><a href="nashi-proekty.html">Усі програми</a><a href="dopomoga-viyskovim.html">Допомога військовим</a><a href="stomatologiya-dlya-viyskovih.html">Стоматологія для військових</a><a href="dopomoga-dityam.html">Допомога дітям</a><a href="dopomoga-pereselentsyam.html">Допомога переселенцям</a><a href="dopomoga-likarnyam.html">Допомога лікарням</a><a href="dopomoga-tvarinam.html">Допомога тваринам</a></div></details><a href="kontakti.html">Контакти</a></nav>
 
-<a class="site-button site-button-donate" href="pidtrymaty.html">Зробити внесок</a>
+<nav class="site-lang" aria-label="Мова"><a href="/dyakuyemo-za-pidtrymku.html" hreflang="uk" lang="uk" aria-current="true">UA</a><a href="/thank-you.html" hreflang="en" lang="en">EN</a></nav><a class="site-button site-button-donate" href="pidtrymaty.html">Зробити внесок</a>
 <nav class="site-social" aria-label="Соціальні мережі"><a href="https://www.facebook.com/blagofond.andriyuk/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.instagram.com/peremoga_fond__maybutnye/" target="_blank" rel="noopener noreferrer">Instagram</a></nav>
 <details class="site-mobile"><summary aria-label="Відкрити меню сайту">Меню сайту</summary><nav aria-label="Мобільна навігація"><a href="index.html">Головна</a><a href="yak-otrymaty-dopomogu.html">Допомога</a><a href="pidtrymaty.html">Підтримати</a><a href="donate.html" lang="en">Donate</a><a href="news-stories.html">Звіти та новини</a><a href="videozvity.html">Відеозвіти</a><a href="misiya.html">Про фонд</a><span class="site-mobile-label">Ще про фонд</span><a href="pro-nas.html" class="site-mobile-program">Історія засновника</a><a href="komanda.html" class="site-mobile-program">Команда</a><a href="galereya.html" class="site-mobile-program">Галерея</a><a href="arhiv.html" class="site-mobile-program">Архів 2017–2018</a><span class="site-mobile-label">Програми</span><a href="nashi-proekty.html" class="site-mobile-program">Усі програми</a><a href="dopomoga-viyskovim.html" class="site-mobile-program">Допомога військовим</a><a href="stomatologiya-dlya-viyskovih.html" class="site-mobile-program">Стоматологія для військових</a><a href="dopomoga-dityam.html" class="site-mobile-program">Допомога дітям</a><a href="dopomoga-pereselentsyam.html" class="site-mobile-program">Допомога переселенцям</a><a href="dopomoga-likarnyam.html" class="site-mobile-program">Допомога лікарням</a><a href="dopomoga-tvarinam.html" class="site-mobile-program">Допомога тваринам</a><a href="kontakti.html">Контакти</a><span class="site-mobile-label">Соціальні мережі</span><a href="https://www.facebook.com/blagofond.andriyuk/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.instagram.com/peremoga_fond__maybutnye/" target="_blank" rel="noopener noreferrer">Instagram</a></nav></details>
 </div></header>
@@ -73,7 +102,7 @@
             <h2>Якщо ви щойно завершили оплату</h2>
             <p>Збережіть квитанцію або підтвердження WayForPay. Фонд спрямовує зібрані кошти на статутні благодійні цілі. Публікації про діяльність зібрано в розділі звітів.</p>
             <p>Якщо платіж не завершено або сторінка відкрилася випадково, ви можете повернутися до оформлення внеску. Сам перегляд цієї сторінки не є пожертвою.</p>
-            <!-- WayForPay donate links do not document a success URL query parameter. In the WayForPay merchant cabinet set Approved URL / Return URL to https://andriukfoundation.com/thank-you.html. The cabinet accepts one return address; this Ukrainian confirmation page stays available from the thank-you page. -->
+            <!-- WayForPay donate links do not document a success URL query parameter. In the WayForPay merchant cabinet set Approved URL / Return URL to https://andriukfoundation.com/dyakuyemo-za-pidtrymku.html -->
             <div class="site-actions">
                 <a class="site-button" href="news-stories.html">Звіти та новини</a>
                 <a class="site-button site-button-secondary" href="pidtrymaty.html">Повернутися до внеску</a>
