@@ -205,7 +205,12 @@ body{overflow-wrap:break-word}
 .site-video-card .report-meta{margin:.9rem 1.1rem .35rem}
 .site-video-card .site-video-open{margin:0 1.1rem 1.15rem;font-weight:700;color:#1e3a8a;text-decoration:underline;text-underline-offset:.18rem}
 .site-video-card h3{font-size:1.05rem;font-weight:750;line-height:1.35;margin:.9rem 1.1rem .85rem;color:#0f172a}
-.site-testimonial-video{display:block;width:100%;height:auto;background:#0f172a}
+.site-testimonial-video{display:block;width:100%;max-width:100%;height:auto;background:#0f172a}
+.site-video-portrait{width:100%}
+@media(min-width:760px){
+  .site-video-portrait{max-width:24rem;margin-inline:auto}
+  .site-video-portrait .site-testimonial-video{width:auto;max-width:100%;height:auto;max-height:min(70vh,36rem);margin-inline:auto}
+}
 .site-section h2.site-media-heading{margin-top:2.5rem}
 .site-foundation-videos h2{font-size:clamp(1.5rem,4vw,2rem);font-weight:800;color:#0f172a;line-height:1.25;margin:0 0 1rem}
 .site-foundation-videos .site-video-grid{margin-top:0}
