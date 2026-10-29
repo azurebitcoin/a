@@ -273,11 +273,15 @@ function isEnglishPage() {
   var file = (location.pathname.split("/").pop() || "index.html").split("?")[0];
   if (!file) file = "index.html";
   if (file.indexOf(".html") === -1 && file !== "") return;
+  // Home links are "/" and "/en/", not index.html. Empty pathnames still resolve to index.html above.
+  var homeHref = file === "index.html" ? (isEnglishPage() ? "/en/" : "/") : "";
   document.querySelectorAll(".site-header [aria-current='page']").forEach(function (el) {
     /* Keep server-rendered current page; only fill gaps on alias URLs. */
   });
   document.querySelectorAll(".site-header a[href]").forEach(function (link) {
-    if (link.getAttribute("href") === file) link.setAttribute("aria-current", "page");
+    var href = link.getAttribute("href");
+    var inLang = link.closest && link.closest(".site-lang");
+    if (href === file || (homeHref && href === homeHref && !inLang)) link.setAttribute("aria-current", "page");
   });
 })();
 
