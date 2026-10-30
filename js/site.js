@@ -147,7 +147,10 @@ function isEnglishPage() {
     try { return sessionStorage.getItem(name); } catch (_) { return null; }
   }
   function storageSet(name, value) {
-    try { sessionStorage.setItem(name, value); } catch (_) {}
+    try {
+      sessionStorage.setItem(name, value);
+      return sessionStorage.getItem(name) === value;
+    } catch (_) { return false; }
   }
   function storageRemove(name) {
     try { sessionStorage.removeItem(name); } catch (_) {}
@@ -158,12 +161,46 @@ function isEnglishPage() {
     storageSet(flagKey, "sent");
   }
 
+  var preparedPendingKey = "andriuk_letter_prepared_pending";
+  var preparedInMemory = false;
+  var letterTopic = storageGet("andriuk_letter_topic") || "";
+  // Only fixed category codes reach analytics, never arbitrary form or storage values.
+  var topicCodes = {
+    "Допомога військовим": "military_aid", "Military aid": "military_aid",
+    "Стоматологія для військових": "military_dental", "Dental care for service members": "military_dental",
+    "Допомога дітям": "children", "Help for children": "children",
+    "Допомога переселенцям": "displaced_people", "Help for displaced people": "displaced_people",
+    "Допомога лікарням": "hospitals", "Help for hospitals": "hospitals",
+    "Допомога тваринам": "animals", "Help for animals": "animals",
+    "Волонтерство та партнерство": "volunteering", "Volunteering and partnership": "volunteering",
+    "Запит щодо звітності": "reporting", "Reporting request": "reporting",
+    "Інше питання": "other", "Other question": "other"
+  };
+  function sendLetterAction(name) {
+    send(name, {
+      contact_source: "letter_form",
+      contact_language: isEnglishPage() ? "en" : "uk",
+      contact_topic: Object.prototype.hasOwnProperty.call(topicCodes, letterTopic) ? topicCodes[letterTopic] : "other"
+    });
+  }
+  function sendLetterPrepared() {
+    if (!analyticsAllowed()) return;
+    var preparedPage = document.body && document.body.getAttribute("data-contact-step") === "prepared";
+    if (!preparedInMemory && !(preparedPage && storageGet(preparedPendingKey) === "1" && storageGet("andriuk_letter_preview"))) return;
+    sendLetterAction("contact_letter_prepared");
+    preparedInMemory = false;
+    storageRemove(preparedPendingKey);
+  }
+
+  // Old pending leads must never be replayed as new preparations or receipts.
+  storageRemove("andriuk_lead_pending");
+
   document.addEventListener("click", function (event) {
     var link = event.target.closest("a[href]");
     if (!link || !analyticsAllowed() || typeof window.gtag !== "function") return;
     var href = link.getAttribute("href");
     var method = href.indexOf("tel:") === 0 ? "phone" : href.indexOf("mailto:") === 0 ? "email" : "";
-    if (method) window.gtag("event", "contact_click", { contact_method: method });
+    if (method && link.id !== "letter-open") window.gtag("event", "contact_click", { contact_method: method });
     if (href.indexOf("https://secure.wayforpay.com/donate/") === 0) window.gtag("event", "donation_click", { payment_provider: "WayForPay" });
     // A click is not a completed donation or a confirmed lead. Never send letter contents to analytics.
   });
@@ -176,36 +213,30 @@ function isEnglishPage() {
         payment_provider: "WayForPay"
       });
     }
-    if (conversion === "generate_lead") {
-      var topic = storageGet("andriuk_letter_topic") || "";
-      var pending = storageGet("andriuk_lead_pending") === "1";
-      if (pending) {
-        fireOnce("andriuk_generate_lead_sent", "generate_lead", {
-          lead_source: "contact_form",
-          lead_topic: topic
-        });
-        fireOnce("andriuk_contact_submit_sent", "contact_submit", {
-          lead_source: "contact_form",
-          lead_topic: topic
-        });
-        if (topic === "Волонтерство та партнерство" || topic === "Volunteering and partnership") {
-          fireOnce("andriuk_volunteer_interest_sent", "volunteer_interest", {
-            method: "contact_form"
-          });
-        }
-        storageRemove("andriuk_lead_pending");
-      }
-    }
+    // Preparing a letter, visiting this page or opening mail cannot confirm receipt.
+    // generate_lead must only come from a future verified server/mailbox integration.
+    sendLetterPrepared();
   }
   window.addEventListener("andriuk-analytics-ready", sendPageConversions);
   sendPageConversions();
 
   function bindLetterTools(preview, mail, status) {
+    mail.addEventListener("click", function (event) {
+      if (!preview.value) return;
+      event.preventDefault();
+      sendLetterAction("contact_send_intent");
+      status.textContent = isEnglishPage()
+        ? "Send the message in your email app. This website cannot confirm sending or receipt."
+        : "Надішліть повідомлення у поштовій програмі. Сайт не може підтвердити надсилання чи отримання.";
+      // Keep personal data out of the DOM href and automatic link_url tracking.
+      window.location.assign("mailto:info@andriukfoundation.com?subject=" + encodeURIComponent(letterTopic) + "&body=" + encodeURIComponent(preview.value));
+    });
     var copy = document.getElementById("letter-copy");
     if (copy) {
       copy.addEventListener("click", async function () {
         try {
           await navigator.clipboard.writeText(preview.value);
+          sendLetterAction("contact_letter_copied");
           status.textContent = isEnglishPage()
             ? "Text copied. Paste it into an email to info@andriukfoundation.com."
             : "Текст скопійовано. Вставте його у лист до info@andriukfoundation.com.";
@@ -219,12 +250,8 @@ function isEnglishPage() {
       });
     }
     var savedText = storageGet("andriuk_letter_preview");
-    var savedTopic = storageGet("andriuk_letter_topic") || "Звернення до фонду";
     if (savedText && preview) {
       preview.value = savedText;
-      if (mail) {
-        mail.href = "mailto:info@andriukfoundation.com?subject=" + encodeURIComponent(savedTopic) + "&body=" + encodeURIComponent(savedText);
-      }
       var result = document.getElementById("letter-result");
       if (result) result.hidden = false;
       if (status && !status.textContent) {
@@ -255,16 +282,30 @@ function isEnglishPage() {
     var text = isEnglishPage()
       ? "Hello,\n\nTopic: " + topic + "\nName: " + data.get("sender").trim() + "\nCity: " + data.get("city").trim() + "\nReply contact: " + data.get("contact").trim() + "\n\n" + data.get("message").trim()
       : "Добрий день!\n\nТема: " + topic + "\nІм’я: " + data.get("sender").trim() + "\nМісто: " + data.get("city").trim() + "\nКонтакт для відповіді: " + data.get("contact").trim() + "\n\n" + data.get("message").trim();
-    storageSet("andriuk_letter_preview", text);
-    storageSet("andriuk_letter_topic", topic);
-    storageSet("andriuk_lead_pending", "1");
+    letterTopic = topic;
+    storageRemove(preparedPendingKey);
+    var textSaved = storageSet("andriuk_letter_preview", text);
+    var topicSaved = storageSet("andriuk_letter_topic", topic);
+    var draftSaved = textSaved && topicSaved && storageSet(preparedPendingKey, "1");
     if (preview) preview.value = text;
-    if (mail) mail.href = "mailto:info@andriukfoundation.com?subject=" + encodeURIComponent(topic) + "&body=" + encodeURIComponent(text);
-    window.location.assign("dyakuyemo-za-zvernennya.html");
     if (result) result.hidden = false;
     if (status) status.textContent = isEnglishPage()
-      ? "The text is ready. If the thank-you page did not open, send the email from your own mailbox."
-      : "Текст підготовлено. Якщо сторінка подяки не відкрилася, надішліть лист зі своєї пошти.";
+      ? "The text is ready. The letter has not been sent. Send it from your own email."
+      : "Текст підготовлено. Лист ще не надіслано. Надішліть його зі своєї пошти.";
+    if (draftSaved) {
+      try {
+        window.location.assign(isEnglishPage() ? "/en/dyakuyemo-za-zvernennya.html" : "/dyakuyemo-za-zvernennya.html");
+        return;
+      } catch (_) {}
+    }
+    // If session storage or navigation fails, retain the usable draft on this page.
+    if (!textSaved || !topicSaved) {
+      storageRemove("andriuk_letter_preview");
+      storageRemove("andriuk_letter_topic");
+    }
+    storageRemove(preparedPendingKey);
+    preparedInMemory = true;
+    sendLetterPrepared();
   });
 })();
 
@@ -294,3 +335,4 @@ function isEnglishPage() {
     });
   }, true);
 })();
+
