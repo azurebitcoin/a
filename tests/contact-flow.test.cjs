@@ -99,7 +99,9 @@ async function openSite(t, url, options = {}) {
   await page.waitForLoadState('load');
   async function events(name) {
     await page.evaluate(() => Promise.all(window.__analyticsPending || []));
-    return commands.filter(command => command[0] === 'event' && (!name || command[1] === name));
+    // Google Ads conversions ('conversion' + send_to) are separate from the site's
+    // own analytics events; tests below count only the site's events.
+    return commands.filter(command => command[0] === 'event' && command[1] !== 'conversion' && (!name || command[1] === name));
   }
   t.after(async () => {
     try {

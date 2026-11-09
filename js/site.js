@@ -182,6 +182,12 @@ function isEnglishPage() {
       contact_language: isEnglishPage() ? "en" : "uk",
       contact_topic: Object.prototype.hasOwnProperty.call(topicCodes, letterTopic) ? topicCodes[letterTopic] : "other"
     });
+    // Google Ads «Заявка з сайту» (AW-18467119985/fAx1CMPQ97QdEPHG5-VE).
+    // Фіксуємо лише реальний намір надіслати лист — не підготовку чернетки
+    // і не відкриття сторінки. Під тим самим контролем згоди, що й аналітика.
+    if (name === "contact_send_intent" && analyticsAllowed() && typeof window.gtag === "function") {
+      window.gtag("event", "conversion", { send_to: "AW-18467119985/fAx1CMPQ97QdEPHG5-VE" });
+    }
   }
   function sendLetterPrepared() {
     if (!analyticsAllowed()) return;
