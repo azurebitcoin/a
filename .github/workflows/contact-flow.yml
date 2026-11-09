@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  checks: write
 
 jobs:
   browser-tests:
@@ -27,4 +28,28 @@ jobs:
         run: |
           node -e "const {chromium}=require('playwright'); console.log('executablePath:', chromium.executablePath())"
           node -e "const {chromium}=require('playwright'); (async()=>{const b=await chromium.launch({headless:true});const p=await b.newPage();await p.setContent('<h1>ok</h1>');console.log('launch OK:', await p.textContent('h1'));await b.close();})().catch(e=>{console.error('LAUNCH FAILED:', e.message);process.exit(1)})"
-      - run: npm test
+      - name: Run contact flow tests
+        run: |
+          set -o pipefail
+          npm test 2>&1 | tee test-output.txt
+
+      # Публікує вивід тесту в check-run: логи Actions закриті без прав адміна,
+      # а check-run доступний для читання. Допомагає діагностувати падіння.
+      - name: Publish failure details
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let log = '';
+            try { log = fs.readFileSync('test-output.txt', 'utf8'); } catch (e) {}
+            if (!log.trim()) log = 'test-output.txt порожній — крок упав до запуску тестів. Дивись попередні кроки.';
+            await github.rest.checks.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: 'browser-tests detail',
+              head_sha: context.sha,
+              status: 'completed',
+              conclusion: 'neutral',
+              output: { title: 'Вивід npm test', summary: 'останні 60 000 символів', text: log.slice(-60000) }
+            });
