@@ -12,7 +12,7 @@ permissions:
 jobs:
   browser-tests:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -25,13 +25,15 @@ jobs:
       - run: npx playwright install --with-deps chromium
       # Діагностика: шлях до бінарника і пробний запуск. Видно в логах кроку.
       - name: Verify browser launches
+        timeout-minutes: 3
         run: |
           node -e "const {chromium}=require('playwright'); console.log('executablePath:', chromium.executablePath())"
           node -e "const {chromium}=require('playwright'); (async()=>{const b=await chromium.launch({headless:true});const p=await b.newPage();await p.setContent('<h1>ok</h1>');console.log('launch OK:', await p.textContent('h1'));await b.close();})().catch(e=>{console.error('LAUNCH FAILED:', e.message);process.exit(1)})"
       - name: Run contact flow tests
+        timeout-minutes: 8
         run: |
           set -o pipefail
-          npm test 2>&1 | tee test-output.txt
+          timeout 420 npm test 2>&1 | tee test-output.txt
 
       # Публікує вивід тесту в check-run: логи Actions закриті без прав адміна,
       # а check-run доступний для читання. Допомагає діагностувати падіння.
