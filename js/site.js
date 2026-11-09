@@ -336,3 +336,23 @@ function isEnglishPage() {
   }, true);
 })();
 
+
+// Google Ads: «Клік на телефон» (AW-18467119985/0ZAXCMmi_rQdEPHG5-VE).
+// Клік по tel: показує реальний намір зателефонувати. Один раз на перегляд сторінки.
+(function () {
+  "use strict";
+  var CONVERSION = "AW-18467119985/0ZAXCMmi_rQdEPHG5-VE";
+  var fired = false;
+  document.addEventListener("click", function (event) {
+    if (fired) return;
+    var el = event.target;
+    while (el && el.nodeType === 1) {
+      if (el.tagName === "A" && (el.getAttribute("href") || "").indexOf("tel:") === 0) {
+        fired = true;
+        try { window.gtag("event", "conversion", { send_to: CONVERSION }); } catch (_) {}
+        return;
+      }
+      el = el.parentNode;
+    }
+  }, true);
+})();
