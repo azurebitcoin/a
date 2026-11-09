@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Andriuk Foundation — вхід</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<style>
+  :root { color-scheme: dark; }
+  body { font-family: system-ui,-apple-system,"Segoe UI",sans-serif; background:#0b0d10; color:#e8eaed;
+         display:grid; place-items:center; min-height:100vh; margin:0; padding:24px; }
+  .card { max-width:460px; width:100%; padding:32px; border:1px solid #22262c; border-radius:16px;
+          background:#12151a; text-align:center; }
+  h1 { font-size:19px; margin:0 0 10px; }
+  p  { color:#9aa0a6; font-size:14px; line-height:1.6; margin:0 0 8px; }
+  code { background:#1b1f26; padding:2px 6px; border-radius:6px; font-size:13px; }
+  a.btn { display:inline-block; margin-top:16px; padding:10px 18px; border-radius:10px;
+          background:#3b82f6; color:#fff; text-decoration:none; font-size:14px; font-weight:600; }
+  .err { color:#f87171; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1 id="title">Завершую вхід…</h1>
+  <p id="text">Повертаю вас у термінал.</p>
+  <div id="actions"></div>
+</div>
+
+<script>
+/*
+ * Статична сторінка-передавач для OAuth.
+ * Живе на GitHub Pages (серверний код тут неможливий), тому вона нічого не
+ * обмінює — лише перекидає ?code&state на локальний сервер CLI:
+ *
+ *   Google → https://andriukfoundation.com/auth.html?code=…&state=…
+ *          → http://127.0.0.1:<port>/?code=…&state=…
+ *
+ * Порт зашитий у state (base64url JSON { p: port, n: nonce }).
+ */
+(function () {
+  var params = new URLSearchParams(location.search);
+  var code  = params.get("code");
+  var error = params.get("error");
+  var state = params.get("state");
+
+  function fail(title, text) {
+    document.getElementById("title").textContent = title;
+    document.getElementById("text").className = "err";
+    document.getElementById("text").textContent = text;
+  }
+
+  if (error) { fail("Вхід скасовано", "Google повернув: " + error); return; }
+  if (!code || !state) { fail("Немає коду", "Відкрийте цю сторінку через команду входу в терміналі."); return; }
+
+  var port = 8765;
+  try {
+    var json = JSON.parse(atob(state.replace(/-/g, "+").replace(/_/g, "/")));
+    if (json && json.p) port = json.p;
+  } catch (e) { /* старий формат state — використовуємо типовий порт */ }
+
+  var target = "http://127.0.0.1:" + port + "/?code=" + encodeURIComponent(code) +
+               "&state=" + encodeURIComponent(state);
+
+  window.location.replace(target);
+
+  setTimeout(function () {
+    document.getElementById("title").textContent = "Термінал не відповідає";
+    document.getElementById("text").innerHTML =
+      "Локальний сервер на <code>127.0.0.1:" + port + "</code> не запущений або закритий.<br>" +
+      "Поверніться в термінал, запустіть <code>node login-local.js</code> і повторіть вхід.";
+    document.getElementById("actions").innerHTML =
+      '<a class="btn" href="' + target + '">Спробувати ще раз</a>';
+  }, 2500);
+})();
+</script>
+</body>
+</html>
