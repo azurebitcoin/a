@@ -19,5 +19,12 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npx playwright install --with-deps chromium --only-shell
+      # Повний chromium, а не лише headless shell: shell не завжди стартує
+      # на ubuntu-раннері, а падіння виглядає як «тест не пройшов».
+      - run: npx playwright install --with-deps chromium
+      # Діагностика: шлях до бінарника і пробний запуск. Видно в логах кроку.
+      - name: Verify browser launches
+        run: |
+          node -e "const {chromium}=require('playwright'); console.log('executablePath:', chromium.executablePath())"
+          node -e "const {chromium}=require('playwright'); (async()=>{const b=await chromium.launch({headless:true});const p=await b.newPage();await p.setContent('<h1>ok</h1>');console.log('launch OK:', await p.textContent('h1'));await b.close();})().catch(e=>{console.error('LAUNCH FAILED:', e.message);process.exit(1)})"
       - run: npm test
